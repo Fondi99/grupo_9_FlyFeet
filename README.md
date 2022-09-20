@@ -7,6 +7,8 @@
 - organizadores de valija
 - riñoneras
 - fundas
+- valija
+- almohadas
 
 ## Sitios referentes:
 - https://flyfeet.com.ar
