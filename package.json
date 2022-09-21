@@ -1,0 +1,23 @@
+{
+  "name": "grupo_9_flyfeet",
+  "version": "1.0.0",
+  "description": "- mochilas\r - portapasaportes\r - necesers\r - organizadores de valija\r - riñoneras\r - fundas\r - valija\r - almohadas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fondi99/grupo_9_FlyFeet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fondi99/grupo_9_FlyFeet/issues"
+  },
+  "homepage": "https://github.com/Fondi99/grupo_9_FlyFeet#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
