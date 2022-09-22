@@ -30,6 +30,6 @@ app.get('/producto', (req, res) => {
 });
 
 //Pagina 404, envio pagina no encontrada
-app.get('/404', (req, res) => {
-    res.send("Error página no encontrada")
+app.get('/*', (req, res) => {
+    res.send("404//Error página no encontrada")
 });
