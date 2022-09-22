@@ -11,8 +11,9 @@
 - almohadas
 
 ## Sitios referentes:
-- https://flyfeet.com.ar
-- https://go.travel
-- https://www.target.com/c/travel-accessories-luggage/-/N-5xtyq
-- https://seatosummit.es
+- https://flyfeet.com.ar/
+- https://go.travel/
+- https://www.target.com/
+- https://seatosummit.es/
+- https://www.awaytravel.com/
 
