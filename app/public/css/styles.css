@@ -27,8 +27,8 @@ nav.navbar .brand {
 }
 
 nav.navbar .navbar-toggler {
-  width: 100px;
-  padding: 20px;
+  margin-right: 46.5px;
+  margin-left: 5px;
 }
 
 nav.navbar ul {
