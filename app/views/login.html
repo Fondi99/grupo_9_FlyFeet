@@ -7,6 +7,24 @@
     <title>Formulario de login</title>
 </head>
 <body>
-    
+    <main>
+        <form action="login.html" method="post">
+            <div>
+                <h3>Correo electronico</h3>
+                <label for="form-user-email"></label>
+                <input type="text" name="email" value="Correo electronico" onfocus="this.value = this.value=='Correo electronico'?'':this.value;" onblur="this.value = this.value==''?'Correo electronico':this.value;" style="color:#666;">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <h3>Contraseña</h3>
+                <label for="form-user-password"></label>
+                <input type="password" name="password" id="form-user-password">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

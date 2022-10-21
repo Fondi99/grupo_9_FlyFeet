@@ -7,6 +7,50 @@
     <title>Formulario de registro</title>
 </head>
 <body>
-    
+    <main>
+        <form action="register.html" method="post">
+            <h2>Información Personal</h2>
+            <div>
+                <h3>Nombre</h3>
+                <label for="form-user-name"></label>
+                <input type="text" name="fullname" value="Nombre" onfocus="this.value = this.value=='Nombre'?'':this.value;" onblur="this.value = this.value==''?'Nombre':this.value;" style="color:#666;">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <h3>Apellido</h3>
+                <label for="form-user-surname"></label>
+                <input type="text" name="fullname" value="Apellido" onfocus="this.value = this.value=='Apellido'?'':this.value;" onblur="this.value = this.value==''?'Apellido':this.value;" style="color:#666;">
+                <span class="feedback"></span>
+            </div>
+            <h2>Información de logeo</h2>
+            <div>
+                <h3>Correo electronico</h3>
+                <label for="form-user-email"></label>
+                <input type="text" name="email" value="Correo electronico" onfocus="this.value = this.value=='Correo electronico'?'':this.value;" onblur="this.value = this.value==''?'Correo electronico':this.value;" style="color:#666;">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <h3>Fecha de nacimiento</h3>
+                <label for="form-user-birthdate"></label>
+                <input type="date" name="birthdate" style="color:#666;">
+            </div>
+            <div>
+                <h3>Contraseña</h3>
+                <label for="form-user-password"></label>
+                <input type="password" name="password" id="form-user-password">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <h3>Confirmar contraseña</h3>
+                <label for="form-user-passwordmatch"></label>
+                <input type="password" name="password-match" id="form-user-passwordmatch">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <button type="clear">Limpiar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
