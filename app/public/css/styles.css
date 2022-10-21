@@ -4,26 +4,36 @@
     padding: 0;
 }
 header{
-    height: 60px;
     display: flex;
     background-color: white;
-    border: 1px solid black;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    height: 65px;
     
+}
+.display-flex{
+    display: flex;
+    margin-left: 5.5px;
 }
 #burger-menu{
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    margin: 10px;
+}
+#invisible{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    visibility: hidden;
 }
 #header-nav{
     list-style-type: none;
     display: none;
 }
 #brand-logo{
-    height: 58px;
+    height: 50px;
+    margin-top: 4px;
 }
 #header-button{
     height: 20px;
@@ -31,19 +41,62 @@ header{
     margin: 10px;
 }
 
-.banner-div{
-    margin:auto;
-	min-width: 230px;
-	position: relative;
-    height: auto;
-	min-height: 300px;
-	max-height: 500px;
-	overflow: hidden;
-	background-image: linear-gradient(to bottom right, #D45BA1, #A784E0);
-    text-align: center;
-    align-items: flex-start;
-}
 .banner{
-    display: block;
-    align-self: stretch;
+    background-color: #51a3a3ff;
+    margin: auto;
+    min-width: 230px;
+    height: auto;
+    min-height: 275px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-content{
+    color: #c3e991ff;
+}
+section h1{
+    font-size: xx-large;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    width: 30%;
+    display: flex;
+    margin: auto;
+}
+section article{
+    width: 80%;
+    border: 1px solid black;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+
+/*Tablet*/
+@media (min-width:426px){
+    .articles{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    main section article{
+        flex: 40%;
+        margin: 10px;
+    }
+}
+/*Laptop*/
+@media (min-width:769px){
+    main section article{
+        flex: 20%;
+        margin: 10px;
+    }
+    .display-flex{
+        display: none;
+    }
+    #header-nav{
+        display: flex;
+    }
 }
