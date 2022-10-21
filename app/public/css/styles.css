@@ -1,102 +1,129 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-header{
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 65px;
-    
-}
-.display-flex{
-    display: flex;
-    margin-left: 5.5px;
-}
-#burger-menu{
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-}
-#invisible{
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    visibility: hidden;
-}
-#header-nav{
-    list-style-type: none;
-    display: none;
-}
-#brand-logo{
-    height: 50px;
-    margin-top: 4px;
-}
-#header-button{
-    height: 20px;
-    width: 20px;
-    margin: 10px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
 }
 
-.banner{
-    background-color: #51a3a3ff;
-    margin: auto;
-    min-width: 230px;
-    height: auto;
-    min-height: 275px;
-    max-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.banner-content{
-    color: #c3e991ff;
-}
-section h1{
-    font-size: xx-large;
-    text-align: center;
-    justify-content: center;
-    padding: 10px;
-    width: 30%;
-    display: flex;
-    margin: auto;
-}
-section article{
-    width: 80%;
-    border: 1px solid black;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    display: flex;
-    margin-bottom: 5px;
+/* Start Navbar styles */
+nav.navbar {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
 }
 
+nav.navbar .brand {
+  padding: 5px;
+}
+
+nav.navbar .brand #brand-logo {
+  width: 50px;
+}
+
+nav.navbar .brand {
+  padding: 5px;
+}
+
+nav.navbar .navbar-toggler {
+  width: 100px;
+  padding: 20px;
+}
+
+nav.navbar ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav.navbar .items {
+  display: none;
+}
+
+nav.navbar .items li {
+  width: 100px;
+}
+
+nav.navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav.navbar .user {
+  padding: 5px;
+}
+
+nav.navbar .user i {
+  font-size: 20px;
+}
+/* End Navbar */
+
+/* Start Main */
+.banner {
+  background-color: #51a3a3ff;
+  margin: auto;
+  min-width: 230px;
+  height: auto;
+  min-height: 275px;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-content {
+  color: #c3e991ff;
+}
+
+section h1 {
+  font-size: xx-large;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  width: 30%;
+  display: flex;
+  margin: auto;
+}
+
+main section {
+  margin: 40px;
+}
+
+main section article {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 0 0 10px 0;
+  padding: 10px;
+}
+/* End Main */
 
 /*Tablet*/
-@media (min-width:426px){
-    .articles{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    main section article{
-        flex: 40%;
-        margin: 10px;
-    }
+@media (min-width: 426px) {
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  main section article {
+    width: 48%;
+  }
 }
+
 /*Laptop*/
-@media (min-width:769px){
-    main section article{
-        flex: 20%;
-        margin: 10px;
-    }
-    .display-flex{
-        display: none;
-    }
-    #header-nav{
-        display: flex;
-    }
+@media (min-width: 769px) {
+  nav.navbar .navbar-toggler {
+    display: none;
+  }
+  nav.navbar .items {
+    display: flex;
+  }
+  main section article {
+    width: 23%;
+  }
 }

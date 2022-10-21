@@ -10,14 +10,10 @@ app.listen(3030,()=>
 );
 //Pagina principal
 app.get('/', (req, res) => {
-    res.send("Pagina principal")
-});
-
-app.get('/home', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/home.html'))
 });
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/carrito.html'))
+app.get('/cart', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './app/views/cart.html'))
 });
 app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/login.html'))
