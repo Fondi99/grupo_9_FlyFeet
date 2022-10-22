@@ -47,10 +47,6 @@ nav.navbar .icons ul {
   background-color: wheat;
 }
 
-nav.navbar #myLinks {
-  display: none;
-}
-
 nav.navbar #myLinks li {
   width: 100px;
 }
@@ -147,8 +143,21 @@ footer nav ul li{
 
 /*Ënd Footer*/
 
+
 /*Tablet*/
+@media (max-width: 768px) {
+  #myLinks {
+    display: none;
+  }
+
+  #myLinks.active {
+    display: block;
+  }
+}
+
+
 @media (min-width: 426px) {
+
   .articles {
     display: flex;
     flex-wrap: wrap;
