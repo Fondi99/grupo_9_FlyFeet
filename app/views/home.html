@@ -8,20 +8,30 @@
     <title>Home Page</title>
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
+    <script>
+        function nav_toggler() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        </script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar-toggler">
-                <a href=""><i class="icon fas fa-bars fa-xl"></i></a>
+                <a href="javascript:void(0);" onclick="nav_toggler()"><i class="icon fas fa-bars fa-xl"></i></a>
             </div>
             <div class="brand">
                 <a href="/#">
                     <img src="/images/logo.jpeg" alt="Logo" id="brand-logo">
                 </a>
             </div>
-            <div class="items">
+            <div id="myLinks" class="icons">
                 <ul>
                     <li>
                         <a href="/#">Categorias</a>
