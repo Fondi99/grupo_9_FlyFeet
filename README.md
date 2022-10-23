@@ -12,10 +12,10 @@
 ## Acerca del proyecto
 ### Integrantes
 #### Juan Francisco Erglis
-#### Lautaro, Serrano [🇦🇷​]
-> Buenas! Me podes llamar lauti o coco - larga historia - 😅.  
-> Tengo 25 años, soy análista de IT y me encuentro estudiando Ing. en informática.  
-> Me apasiona el desarrollo de software, el deporte ​🏈 ​⚽​, cocinar - que lo considero mi cable a tierra - y comer obviamente 🍣​​ 🥑 ​🌽​.  
+#### Lautaro, Serrano [🇦🇷]
+> Buenas! Me podés llamar lauti o coco - larga historia - 😅.  
+> Tengo 25 años, soy analista de IT y me encuentro estudiando Ing. en informática.  
+> Me apasiona el desarrollo de software, el deporte 🏈 ⚽, cocinar - que lo considero mi cable a tierra - y comer obviamente 🍣 🥑 🌽.  
 > Podes encontrarme en LinkedIn: https://www.linkedin.com/in/lautaroserrano/  
 > Un placer!!
 #### Matias Fondini
