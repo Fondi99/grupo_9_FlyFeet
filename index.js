@@ -18,10 +18,10 @@ app.get('/cart', (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/login.html'))
 });
-app.get('/registro', (req, res) => {
+app.get('/register', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/registro.html'))
 });
-app.get('/producto', (req, res) => {
+app.get('/product', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/producto.html'))
 });
 
