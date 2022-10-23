@@ -6,21 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link href="../css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
-    <script>
-        function nav_toggler() {
-            var navbarLinks = document.getElementById("myLinks");
-            navbarLinks.classList.toggle("active");
-        }
-    </script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="navbar-toggler">
-                <a href="javascript:void(0);" onclick="nav_toggler()"><i class="icon fas fa-bars fa-xl"></i></a>
+                <a><i class="icon fas fa-bars fa-xl"></i></a>
             </div>
             <div class="brand">
                 <a href="/#">
@@ -46,6 +40,7 @@
                         <a href="/login">
                             <i class="fa-solid fa-circle-user"></i>
                         </a>
+                        <span class="login">Ingresar</span>
                     </li>
                     <li>
                         <a href="/cart">
@@ -61,31 +56,27 @@
     </main>
     <footer>
         <nav class="footer-navbar">
-            <ul class="footer-navbar-items"><a href="#">
-                    <h3>Nosotros</h3>
-                </a>
+            <ul class="footer-navbar-items">
+                <h3>Nosotros</h3>
                 <li>Lorem</li>
                 <li>Lorem</li>
                 <li>Lorem</li>
             </ul>
-            <ul class="footer-navbar-items"><a href="#">
-                    <h3>Ayuda</h3>
-                </a>
+            <ul class="footer-navbar-items">
+                <h3>Ayuda</h3>
                 <li>Lorem</li>
                 <li>Lorem</li>
             </ul>
-            <ul class="footer-navbar-items"><a href="#">
-                    <h3>Locales</h3>
-                </a>
+            <ul class="footer-navbar-items">
+                <h3>Locales</h3>
                 <li>Lorem</li>
                 <li>Lorem</li>
                 <li>Lorem</li>
                 <li>Lorem</li>
                 <li>Lorem</li>
             </ul>
-            <ul class="footer-navbar-items"><a href="#">
-                    <h3>Servicios</h3>
-                </a>
+            <ul class="footer-navbar-items">
+                <h3>Servicios</h3>
                 <li>Lorem</li>
                 <li>Lorem</li>
                 <li>Lorem</li>
@@ -93,15 +84,15 @@
         </nav>
         <div class="footer-div-links">
             <div id="social-media">
-                <a href=""><i class="fa-brands fa-pinterest fa-xl"></i></i></a>
-                <a href=""><i class="fa-brands fa-facebook fa-xl"></i></i></a>
-                <a href=""><i class="fa-brands fa-instagram fa-xl"></i></i></a>
-                <a href=""><i class="fa-brands fa-twitter fa-xl"></i></i></a>
-                <a href=""><i class="fa-brands fa-youtube fa-xl"></i></i></a>
-                <a href=""><i class="fa-brands fa-tiktok fa-xl"></i></i></a>
+                <a href=""><i class="fa-brands fa-pinterest"></i></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></i></a>
             </div>
             <div id="copyright">
-                <i class="fa-regular fa-copyright fa-xl"></i><span> Copyright</span>
+                <span>© 2022 FlyFeet</span>
             </div>
         </div>
     </footer>
