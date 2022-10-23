@@ -105,6 +105,7 @@ main section {
 main section article {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   border: 1px solid black;
   border-radius: 4px;
