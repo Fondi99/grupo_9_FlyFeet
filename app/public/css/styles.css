@@ -170,8 +170,13 @@ form button{
   padding: 10px 12px;
   border: none;
 }
-
 /*End Login & Register form*/
+/*Start Cart*/
+.cart-items{
+  display: flex;
+  padding: 0 10px;
+}
+/*End Cart*/
 
 
 /*Tablet*/
