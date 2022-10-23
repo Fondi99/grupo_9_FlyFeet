@@ -1,6 +1,7 @@
 # FlyFeet
 ## Acerca de la plataforma
 ### Productos:
+Los productos que ofrecemos son accesorios de viaje en los cuales ayuda a facilitar la organización del viaje. Los productos que trabajamos son:
 - mochilas
 - portapasaportes
 - necesers
@@ -9,6 +10,9 @@
 - fundas
 - valija
 - almohadas
+Además ofrecemos servicios de branding para empresas y vendemos por mayor.
+### Público:
+El público al que apuntamos es de entre 25 y 60 años, que apasione viajar. 
 ## Acerca del proyecto
 ### Integrantes
 #### Juan Francisco Erglis
@@ -23,6 +27,8 @@
 >Tengo 23 años, estoy estudiando Lic. en Analisis de Sistemas.  
 >Me gusta programar 🧑‍💻 y los juegos ♟️ 🎮.
 #### Natacha Godocik
+>Hola, me llamo Natacha. Tengo 25 años y estoy estudiando Community Manager 📱.  
+>Me gusta mucho las redes, cocinar y estar con Kala 🐶 y Bagheera 🐱 que son mis dos amores.
 #### Nicolas Ferreira
 #### Rodrigo Talledo
 ### Link de Trello:
