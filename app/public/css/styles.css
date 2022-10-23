@@ -18,6 +18,7 @@ nav.navbar {
 }
 
 nav.navbar .brand {
+  display: flex;
   padding: 5px;
 }
 
@@ -25,22 +26,12 @@ nav.navbar .brand #brand-logo {
   width: 50px;
 }
 
-nav.navbar .brand {
-  padding: 11.25px;
-  margin-left: auto;
-  margin-right: auto;
+nav.navbar .navbar-toggler {
+  display: flex;
+  width: 160px;
 }
 
-nav.navbar .navbar-toggler {
-  margin-right: 46.5px;
-  margin-left: 5px;
-}
-nav.navbar .user ul{
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-}
-nav.navbar .icons ul {
+nav.navbar #myLinks ul {
   display: flex;
   list-style-type: none;
   flex-direction: column;
@@ -64,7 +55,21 @@ nav.navbar a {
 }
 
 nav.navbar .user {
+  display: flex;
+  justify-content: flex-end;
+  width: 160px;
   padding: 5px;
+}
+
+nav.navbar .user ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+nav.navbar .user li {
+  display: flex;
+  align-items: center;
 }
 
 nav.navbar .user i {
@@ -74,18 +79,11 @@ nav.navbar .user i {
 
 /* Start Main */
 .banner {
-  background-color: #51a3a3ff;
-  margin: auto;
-  min-width: 230px;
-  height: auto;
-  min-height: 275px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.banner-content {
-  color: #c3e991ff;
+  height: auto;
+  margin: auto;
 }
 
 section h1 {
@@ -102,33 +100,60 @@ main section {
   margin: 40px;
 }
 
-main section article {
+article.product {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #eaeaea;
   border-radius: 4px;
   margin: 0 0 10px 0;
   padding: 10px;
 }
+
+article.product a {
+  text-decoration: none;
+}
+
+article.product .category {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+article.product .title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform:uppercase;
+}
+
+article.product .price {
+  font-size: 18px;
+}
+
+
 /* End Main */
 
 /*Start Footer*/
+footer .footer-navbar {
+  padding: 10px;
+  background-color: #eaeaea;
+}
+
 footer nav ul li{
   padding-left: 10px;
   display: none;
 }
 .footer-navbar-items{
-  border: black solid 1px;
   padding: 10px;
   height: 100%;
-  background-color: #cb904dff;
 }
 .footer-div-links{
   display: flex;
   flex-wrap: wrap;
-  background-color: #dfcc74ff;
+  background-color: #333333;
+  font-weight: 300;
+  color: #9e9e9e;
   padding: 10px;
 }
 #social-media{
@@ -136,6 +161,9 @@ footer nav ul li{
   margin-bottom: 10px;
   display: flex;
   justify-content: space-around;
+}
+#social-media i{
+  font-size: 24px;
 }
 #copyright{
   width: 100%;
@@ -218,6 +246,10 @@ form button{
   #myLinks.active {
     display: block;
   }
+
+  nav.navbar .user .login {
+    display: none;
+  }
 }
 
 
@@ -228,9 +260,10 @@ form button{
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  main section article {
+  article.product {
     width: 48%;
   }
+
   #social-media{
     width: 80%;
     margin-bottom: 10px;
@@ -243,7 +276,10 @@ form button{
   nav.navbar .navbar-toggler {
     display: none;
   }
-  nav.navbar .icons ul{
+  nav.navbar .brand {
+    width: 160px;
+  }
+  nav.navbar #myLinks ul{
     display: flex;
     list-style-type: none;
     flex-direction: row;
@@ -255,16 +291,15 @@ form button{
     display: block;
     flex-direction: row;
   }
-  nav.navbar .brand{
-    margin-left: 0;
-    margin-right: 0;
-  }
   main{
     min-width: 768px;
     max-width: 75%;
     margin: auto;
   }
-  main section article {
+  .banner img{
+    border-radius: 10px;
+  }
+  article.product {
     width: 23%;
   }
   footer nav ul li{
@@ -282,23 +317,21 @@ form button{
     width: 25%;
   }
   .footer-div-links{
-    display: flex;
     justify-content: space-between;
-    background-color: #dfcc74ff;
-    padding: 10px;
   }
   #social-media{
-    width: auto;
+    width: 20%;
     margin-bottom: 0;
     display: flex;
     justify-content: space-around;
     margin: 0;
   }
   #copyright{
-    width: auto;
-    justify-content: center;
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: auto;
+    font: 8px;
     margin-top: 0;
   }
 }
