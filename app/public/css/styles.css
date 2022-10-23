@@ -14,7 +14,8 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #C3E991;
+  background-color: #51A3A3;
+  color: white;
 }
 
 nav.navbar .brand {
@@ -38,7 +39,7 @@ nav.navbar #myLinks ul {
   position: absolute;
   left: 0;
   top: 65px;
-  background-color: #C3E991;
+  background-color: #51A3A3;
 }
 
 nav.navbar #myLinks li {
@@ -327,7 +328,7 @@ form button{
     flex-direction: row;
     position: relative;
     top: 0;
-    background-color: #C3E991;
+    background-color: #51A3A3;
   }
   nav.navbar #myLinks {
     display: block;
