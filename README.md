@@ -19,6 +19,9 @@
 > Podes encontrarme en LinkedIn: https://www.linkedin.com/in/lautaroserrano/  
 > Un placer!!
 #### Matias Fondini
+>Hola soy Matias 
+>Tengo 23 años, estoy estudiando Lic. en Analisis de Sistemas.
+>Me gusta programar 🧑‍💻 y los juegos ♟️ 🎮.
 #### Natacha Godocik
 #### Nicolas Ferreira
 #### Rodrigo Talledo
