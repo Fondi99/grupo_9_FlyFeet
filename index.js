@@ -19,10 +19,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, './app/views/login.html'))
 });
 app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/registro.html'))
+    res.sendFile(path.resolve(__dirname, './app/views/register.html'))
 });
 app.get('/product', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/producto.html'))
+    res.sendFile(path.resolve(__dirname, './app/views/product.html'))
 });
 
 //Pagina 404, envio pagina no encontrada

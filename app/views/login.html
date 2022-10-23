@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de login</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
         <form action="login.html" method="post">
+            <div><h4>Entrar con Email y Contraseña</h4></div>
             <div>
-                <h3>Correo electronico</h3>
                 <label for="form-user-email"></label>
-                <input type="text" name="email" value="Correo electronico" onfocus="this.value = this.value=='Correo electronico'?'':this.value;" onblur="this.value = this.value==''?'Correo electronico':this.value;" style="color:#666;">
+                <input type="text" name="email" placeholder="Ej.: ejemplo@mail.com">
                 <span class="feedback"></span>
             </div>
             <div>
-                <h3>Contraseña</h3>
                 <label for="form-user-password"></label>
-                <input type="password" name="password" id="form-user-password">
+                <input type="password" name="password" id="form-user-password" placeholder="Ingrese su contraseña">
                 <span class="feedback"></span>
             </div>
+            <div><a href="">Olvide mi contraseña</a></div>
             <div>
                 <button type="submit">Enviar</button>
             </div>
+            <div><a href="/register">¿No tiene una cuenta? Registrese</a></div>
         </form>
     </main>
 </body>
