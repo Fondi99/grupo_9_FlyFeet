@@ -31,6 +31,8 @@ El público al que apuntamos es de entre 25 y 60 años, que apasione viajar.
 >Me gusta mucho las redes, cocinar y estar con Kala 🐶 y Bagheera 🐱 que son mis dos amores.
 #### Nicolas Ferreira
 #### Rodrigo Talledo
+>Hola, me llamo Rodrigo, tengo 28 años y soy tecnico de laboratorio y analisis clinicos y entré a este curso para buscar un cambio laboral en mi vida.
+>En mi tiempo libre juego futbol americano en la liga de Rosario y jugar videojuegos.
 ### Link de Trello:
 - https://trello.com/b/PpHJSh48/dh-fs-tn43-g9
 ### Sitios referentes:
