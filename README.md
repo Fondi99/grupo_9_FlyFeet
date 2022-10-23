@@ -20,7 +20,7 @@
 > Un placer!!
 #### Matias Fondini
 >Hola soy Matias 
->Tengo 23 años, estoy estudiando Lic. en Analisis de Sistemas.
+>Tengo 23 años, estoy estudiando Lic. en Analisis de Sistemas.  
 >Me gusta programar 🧑‍💻 y los juegos ♟️ 🎮.
 #### Natacha Godocik
 #### Nicolas Ferreira
