@@ -416,3 +416,8 @@ form button{
   position: relative;
   top: 100px;
 }
+
+.nombreCart{
+  text-decoration: underline;
+  font-weight: bold;
+}
