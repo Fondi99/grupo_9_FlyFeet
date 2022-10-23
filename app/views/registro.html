@@ -5,50 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de registro</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
         <form action="register.html" method="post">
-            <h2>Información Personal</h2>
+            <div><h4>Recibir codigo de acceso por e-mail</h4></div>
             <div>
-                <h3>Nombre</h3>
-                <label for="form-user-name"></label>
-                <input type="text" name="fullname" value="Nombre" onfocus="this.value = this.value=='Nombre'?'':this.value;" onblur="this.value = this.value==''?'Nombre':this.value;" style="color:#666;">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <h3>Apellido</h3>
-                <label for="form-user-surname"></label>
-                <input type="text" name="fullname" value="Apellido" onfocus="this.value = this.value=='Apellido'?'':this.value;" onblur="this.value = this.value==''?'Apellido':this.value;" style="color:#666;">
-                <span class="feedback"></span>
-            </div>
-            <h2>Información de logeo</h2>
-            <div>
-                <h3>Correo electronico</h3>
                 <label for="form-user-email"></label>
-                <input type="text" name="email" value="Correo electronico" onfocus="this.value = this.value=='Correo electronico'?'':this.value;" onblur="this.value = this.value==''?'Correo electronico':this.value;" style="color:#666;">
+                <input type="text" name="email" placeholder="Correo electronico">
                 <span class="feedback"></span>
             </div>
             <div>
-                <h3>Fecha de nacimiento</h3>
-                <label for="form-user-birthdate"></label>
-                <input type="date" name="birthdate" style="color:#666;">
-            </div>
-            <div>
-                <h3>Contraseña</h3>
                 <label for="form-user-password"></label>
-                <input type="password" name="password" id="form-user-password">
+                <input type="password" name="password" id="form-user-password" placeholder="Contraseña">
                 <span class="feedback"></span>
             </div>
             <div>
-                <h3>Confirmar contraseña</h3>
                 <label for="form-user-passwordmatch"></label>
-                <input type="password" name="password-match" id="form-user-passwordmatch">
+                <input type="password" name="password-match" id="form-user-passwordmatch" placeholder="Confirmar Contraseña">
                 <span class="feedback"></span>
             </div>
             <div>
-                <button type="clear">Limpiar</button>
-                <button type="submit">Enviar</button>
+                <button type="submit">Crear</button>
             </div>
         </form>
     </main>
