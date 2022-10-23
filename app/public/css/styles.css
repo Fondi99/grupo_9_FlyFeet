@@ -233,6 +233,7 @@ form button{
 .product-subtotal{
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 /*End Cart*/
 
@@ -334,4 +335,43 @@ form button{
     font: 8px;
     margin-top: 0;
   }
+}
+
+/*Carrito de Compras*/ 
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;   /* Height of the footer */
+  background: #6cf;
+}
+
+.contenidoCarrito{
+  position: relative;
+  top: 99px;
+}
+
+.botonCompra{
+  text-align: center;
+}
+
+.botonCart{
+  background-color: black;
+  color: white;
+}
+
+.botonCart:hover{
+  background-color: white;
+  color: black;
+}
+
+.agregarProducto{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.compraInfo{
+  position: relative;
+  top: 100px;
 }
