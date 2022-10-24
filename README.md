@@ -15,7 +15,8 @@ Además ofrecemos servicios de branding para empresas y vendemos por mayor.
 El público al que apuntamos es de entre 25 y 60 años, que apasione viajar. 
 ## Acerca del proyecto
 ### Integrantes
-#### Juan Francisco Erglis
+#### Juan Francisco Erglis 
+> Soy Francisco, tengo 20 años. Soy técnico mecánico, me gusta mucho la música y me interesa aprender programación porque en un futuro no muy lejano va a abundar la inteligencia artificial.
 #### Lautaro, Serrano [🇦🇷]
 > Buenas! Me podés llamar lauti o coco - larga historia - 😅.  
 > Tengo 25 años, soy analista de IT y me encuentro estudiando Ing. en informática.  
