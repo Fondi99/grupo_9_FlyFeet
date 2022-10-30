@@ -1,29 +1,21 @@
 const express = require ('express');
 const app = express();
 const path = require('path');
+const mainRoutes = require('./routes/mainRoutes');
 
 app.use(express.static(path.resolve(__dirname,'./app/public')));
+
+//Configuración de EJS
+app.use(express.static('./public'));
+
+app.set('view engine', 'ejs');
+
+app.use('/', mainRoutes);
 
 //Abrir servidor en puerto 3030
 app.listen(3030,()=>
     console.log("Servidor corriendo en el puerto 3030")
 );
-//Pagina principal
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/home.html'))
-});
-app.get('/cart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/cart.html'))
-});
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/login.html'))
-});
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './app/views/register.html'))
-});
-app.get('/product', (req, res) => {
-    res.sendFile(path.resolve(__dirname, `./app/views/product.html`))
-});
 
 //Pagina 404, envio pagina no encontrada
 app.get('/*', (req, res) => {
