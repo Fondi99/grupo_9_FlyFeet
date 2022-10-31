@@ -1,5 +1,6 @@
 {
   "name": "grupo_9_flyfeet",
+  "type": "module",
   "version": "1.0.0",
   "description": "- mochilas\r - portapasaportes\r - necesers\r - organizadores de valija\r - riñoneras\r - fundas\r - valija\r - almohadas",
   "main": "app.js",

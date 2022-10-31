@@ -1,17 +1,17 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+import  mainController from '../controllers/mainController.js';
 
-const mainController = require('../controllers/mainController');
+const router = Router();
 
-router.get('/', mainController.home);
+router
+.get('/', mainController.home)
+.get('/cart', mainController.cart)
+.get('/login', mainController.login)
+.get('/register', mainController.register)
+.get('/product', mainController.product)
+.get('/*', (req, res) => {
+    res.send("404//Error página no encontrada")
+});
 
-router.get('/cart', mainController.cart);
 
-router.get('/login', mainController.login);
-
-router.get('/register', mainController.register);
-
-router.get('/product', mainController.product);
-
-
-module.exports = router;
+export default router
