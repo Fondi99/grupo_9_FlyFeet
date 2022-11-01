@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de login</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-toggler">
+                <a><i class="icon fas fa-bars fa-xl"></i></a>
+            </div>
+            <div class="brand">
+                <a href="/#">
+                    <img src="/images/logo.png" alt="Logo" id="brand-logo">
+                </a>
+            </div>
+            <div id="myLinks" class="icons">
+                <ul>
+                    <li>
+                        <a href="/#">Categorias</a>
+                    </li>
+                    <li>
+                        <a href="/#">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="/#">Ofertas</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user">
+                <ul>
+                    <li>
+                        <a href="/login">
+                            <i class="fa-solid fa-circle-user"></i>
+                        <span class="login">Ingresar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form action="login.html" method="post">
+            <div><h4>Entrar con Email y Contraseña</h4></div>
+            <div>
+                <label for="form-user-email"></label>
+                <input type="text" name="email" placeholder="Ej.: ejemplo@mail.com">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <label for="form-user-password"></label>
+                <input type="password" name="password" id="form-user-password" placeholder="Ingrese su contraseña">
+                <span class="feedback"></span>
+            </div>
+            <div><a href="">Olvide mi contraseña</a></div>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+            <div><a href="/register">¿No tiene una cuenta? Registrese</a></div>
+        </form>
+    </main>
+    <footer>
+        <nav class="footer-navbar">
+            <ul class="footer-navbar-items">
+                <h3>Nosotros</h3>
+                <li>Quiénes somos</li>
+                <li>Contacto</li>
+                <li>Sumate con nosotros</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Ayuda</h3>
+                <li>Preguntas frecuentes</li>
+                <li>Dejá tu consulta</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Locales</h3>
+                <li>Santa Fe</li>
+                <li>Buenos Aires</li>
+                <li>Corrientes</li>
+                <li>Córdoba</li>
+                <li>Río Negro</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Servicios</h3>
+                <li>Empresas</li>
+                <li>Mayoristas</li>
+            </ul>
+        </nav>
+        <div class="footer-div-links">
+            <div id="social-media">
+                <a href=""><i class="fa-brands fa-pinterest"></i></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></i></a>
+            </div>
+            <div id="copyright">
+                <span>© 2022 FlyFeet</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd4aeec64b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-toggler">
+                <a><i class="icon fas fa-bars fa-xl"></i></a>
+            </div>
+            <div class="brand">
+                <a href="/#">
+                    <img src="/images/logo.png" alt="Logo" id="brand-logo">
+                </a>
+            </div>
+            <div id="myLinks" class="icons">
+                <ul>
+                    <li>
+                        <a href="/#">Categorias</a>
+                    </li>
+                    <li>
+                        <a href="/#">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="/#">Ofertas</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user">
+                <ul>
+                    <li>
+                        <a href="/login">
+                            <i class="fa-solid fa-circle-user"></i>
+                        <span class="login">Ingresar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <div class="contenidoCarrito">
+        <a class="nombreCart">Carrito de compras:</a>
+        <div class="cart-items">
+            <div class="product">
+                <div class="product-unit">
+                    <img src="/images/products/Coast.webp" alt="00000003" width="80">
+                    <div class="product-description">
+                        <div class="product-name">Carry-On</div>
+                        <div class="product-price">$275</div>
+                    </div>
+                </div>
+                <div class="product-subtotal">
+                    <div class="quantity">
+                        <button>-</button>
+                        <div>1</div>
+                        <button>+</button>
+                    </div>
+                    <div class="subtotal-price">$275</div>
+                </div>
+            </div>
+        </div>
+        <div class="agregarProducto">
+            
+            <i class="fa-solid fa-circle-plus"><input type="submit" value="Agregar Producto/s"></i>
+            <div class="vaciar">
+                <input type="submit" value="Vaciar Carrito">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+        </div>
+        <br>
+        <div class="compraInfo">
+            <h4>RESUMEN DE COMPRA:</h4>
+            <br>
+            <div>Cupon de descuento</div>
+            <br>
+            <div>Calcular tiempos y costos de envio</div>
+            <br>
+            <div>Subtotal:</div>
+            <br>
+            <div>Total:</div>
+            <br>
+            <div class="botonCompra">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <input type="submit" value="INICIAR COMPRA" style="font-size: larger" class="botonCart">
+            </i>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <div class="footer">
+        <nav class="footer-navbar">
+            <ul class="footer-navbar-items">
+                <h3>Nosotros</h3>
+                <li>Quiénes somos</li>
+                <li>Contacto</li>
+                <li>Sumate con nosotros</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Ayuda</h3>
+                <li>Preguntas frecuentes</li>
+                <li>Dejá tu consulta</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Locales</h3>
+                <li>Santa Fe</li>
+                <li>Buenos Aires</li>
+                <li>Corrientes</li>
+                <li>Córdoba</li>
+                <li>Río Negro</li>
+            </ul>
+            <ul class="footer-navbar-items">
+                <h3>Servicios</h3>
+                <li>Empresas</li>
+                <li>Mayoristas</li>
+            </ul>
+        </nav>
+        <div class="footer-div-links">
+            <div id="social-media">
+                <a href=""><i class="fa-brands fa-pinterest"></i></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></i></a>
+            </div>
+            <div id="copyright">
+                <span>© 2022 FlyFeet</span>
+            </div>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
