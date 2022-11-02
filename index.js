@@ -1,5 +1,5 @@
 import express from "express";
-import path from "path";
+import path, { dirname } from "path";
 import mainRoutes from "./routes/mainRoutes.js";
 import { fileURLToPath } from 'url';
 
@@ -8,9 +8,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.static(path.resolve(__dirname, "./app/public")));
+
 //Configuración de EJS
+
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
+app.set('views', __dirname + '/partials')
 app.use("/", mainRoutes);
 
 //Abrir servidor en puerto 3030
