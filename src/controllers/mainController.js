@@ -1,29 +1,29 @@
-import url from 'url';
+import url from "url";
 import path from "path";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const controller = {
-    home: (req, res) => {
-        return res.render(path.resolve(__dirname, '../views/home'));
-    },
+  home: (req, res) => {
+    return res.render(path.resolve(__dirname, "../views/home"));
+  },
 
-    register: (req, res) => {
-        return res.render(path.resolve(__dirname, '../views/register'));
-    },
+  product: (req, res) => {
+    return res.render(path.resolve(__dirname, `../views/products/detail`));
+  },
 
-    cart: (req, res) => {
-        return res.render(path.resolve(__dirname, '../views/cart'));
-    },
+  cart: (req, res) => {
+    return res.render(path.resolve(__dirname, "../views/products/cart"));
+  },
 
-    login: (req, res) => {
-        return res.render(path.resolve(__dirname, '../views/login'));
-    },
+  login: (req, res) => {
+    return res.render(path.resolve(__dirname, "../views/users/login"));
+  },
 
-    product: (req, res) => {
-        return res.render(path.resolve(__dirname, `../views/product`));
-    },
-}
+  register: (req, res) => {
+    return res.render(path.resolve(__dirname, "../views/users/register"));
+  },
+};
 
 export default controller;
