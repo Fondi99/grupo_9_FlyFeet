@@ -1,7 +1,11 @@
 import url from "url";
 import path from "path";
 import express from "express";
-import mainRoutes from "./routes/mainRoutes.js";
+// Routers
+import indexRouter from "./routes/indexRoutes.js";
+import userRouter from "./routes/userRoutes.js";
+import productRouter from "./routes/productRoutes.js";
+import adminRouter from "./routes/adminRoutes.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +17,11 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.set("views", path.resolve(__dirname, "/partials"));
 app.set("view engine", "ejs");
-app.use("/", mainRoutes);
+// Server routes
+app.use("/admin", adminRouter);
+// app.use("/product", productRouter);
+// app.use("/user", userRouter);
+app.use("/", indexRouter);
 // Server listening
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
 

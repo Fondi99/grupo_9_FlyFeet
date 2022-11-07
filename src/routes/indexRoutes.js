@@ -9,9 +9,7 @@ router
 .get('/login', mainController.login)
 .get('/register', mainController.register)
 .get('/product', mainController.product)
-.get('/*', (req, res) => {
-    res.send("404//Error página no encontrada")
-});
+.get('/*', mainController.err404)
 
 
 export default router

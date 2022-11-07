@@ -24,6 +24,10 @@ const controller = {
   register: (req, res) => {
     return res.render(path.resolve(__dirname, "../views/users/register"));
   },
+
+  err404: (req, res) => {
+    return res.render(path.resolve(__dirname, "../views/errors/err404"));
+  },
 };
 
 export default controller;
