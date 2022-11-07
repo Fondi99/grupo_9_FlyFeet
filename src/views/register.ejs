@@ -1,0 +1,35 @@
+<!--  Include de head -->
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <form action="/register" method="post">
+                    <div>
+                        <h4>Registro</h4>
+                    </div>
+                    <div>
+                        <label for="form-user-email"></label>
+                        <input type="text" name="email" placeholder="Correo electronico">
+                        <span class="feedback"></span>
+                    </div>
+                    <div>
+                        <label for="form-user-password"></label>
+                        <input type="password" name="password" id="form-user-password" placeholder="Contraseña">
+                        <span class="feedback"></span>
+                    </div>
+                    <div>
+                        <label for="form-user-passwordmatch"></label>
+                        <input type="password" name="password-match" id="form-user-passwordmatch"
+                            placeholder="Confirmar Contraseña">
+                        <span class="feedback"></span>
+                    </div>
+                    <div>
+                        <button type="submit">Crear</button>
+                    </div>
+                </form>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+    </html>

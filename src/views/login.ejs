@@ -1,0 +1,32 @@
+<!--  Include de head -->
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <form action="login.html" method="post">
+                    <div>
+                        <h4>Entrar con Email y Contraseña</h4>
+                    </div>
+                    <div>
+                        <label for="form-user-email"></label>
+                        <input type="text" name="email" placeholder="Ej.: ejemplo@mail.com">
+                        <span class="feedback"></span>
+                    </div>
+                    <div>
+                        <label for="form-user-password"></label>
+                        <input type="password" name="password" id="form-user-password"
+                            placeholder="Ingrese su contraseña">
+                        <span class="feedback"></span>
+                    </div>
+                    <div><a href="">Olvide mi contraseña</a></div>
+                    <div>
+                        <button type="submit">Enviar</button>
+                    </div>
+                    <div><a href="/register">¿No tiene una cuenta? Registrese</a></div>
+                </form>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+    </html>

@@ -1,0 +1,59 @@
+<!--  Include de head -->
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <div class="contenidoCarrito">
+                    <a class="nombreCart">Carrito de compras:</a>
+                    <div class="cart-items">
+                        <div class="product">
+                            <div class="product-unit">
+                                <img src="/images/products/Coast.webp" alt="00000003" width="80">
+                                <div class="product-description">
+                                    <div class="product-name">Carry-On</div>
+                                    <div class="product-price">$275</div>
+                                </div>
+                            </div>
+                            <div class="product-subtotal">
+                                <div class="quantity">
+                                    <button>-</button>
+                                    <div>1</div>
+                                    <button>+</button>
+                                </div>
+                                <div class="subtotal-price">$275</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agregarProducto">
+
+                        <i class="fa-solid fa-circle-plus"><input type="submit" value="Agregar Producto/s"></i>
+                        <div class="vaciar">
+                            <input type="submit" value="Vaciar Carrito">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="compraInfo">
+                        <h4>RESUMEN DE COMPRA:</h4>
+                        <br>
+                        <div>Cupon de descuento</div>
+                        <br>
+                        <div>Calcular tiempos y costos de envio</div>
+                        <br>
+                        <div>Subtotal:</div>
+                        <br>
+                        <div>Total:</div>
+                        <br>
+                        <div class="botonCompra">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <input type="submit" value="INICIAR COMPRA" style="font-size: larger" class="botonCart">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>
