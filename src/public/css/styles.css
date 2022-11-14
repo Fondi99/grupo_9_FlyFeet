@@ -135,6 +135,11 @@ article.product .price {
 /* End Main */
 
 /*Start Footer*/
+
+footer {
+  position: relative;
+  bottom: 0;
+}
 footer .footer-navbar {
   padding: 10px;
   background-color: #eaeaea;

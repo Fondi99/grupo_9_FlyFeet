@@ -15,7 +15,7 @@ const port = process.env.PORT || 3030;
 const app = express();
 // Server config
 app.use(express.static(path.resolve(__dirname, "./public")));
-app.set("views", path.resolve(__dirname, "/partials"));
+app.set('views', path.resolve(__dirname, './views'));
 app.set("view engine", "ejs");
 // Server routes
 app.use("/admin", adminRouter);

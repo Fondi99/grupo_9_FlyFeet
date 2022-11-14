@@ -6,27 +6,27 @@ const __dirname = path.dirname(__filename);
 
 const controller = {
   home: (req, res) => {
-    return res.render(path.resolve(__dirname, "../views/home"));
+    return res.render("home");
   },
 
   product: (req, res) => {
-    return res.render(path.resolve(__dirname, `../views/products/detail`));
+    return res.render("products/detail");
   },
 
   cart: (req, res) => {
-    return res.render(path.resolve(__dirname, "../views/products/cart"));
+    return res.render("products/cart");
   },
 
   login: (req, res) => {
-    return res.render(path.resolve(__dirname, "../views/users/login"));
+    return res.render("users/login");
   },
 
   register: (req, res) => {
-    return res.render(path.resolve(__dirname, "../views/users/register"));
+    return res.render("users/register");
   },
 
   err404: (req, res) => {
-    return res.render(path.resolve(__dirname, "../views/errors/err404"));
+    return res.render("errors/err404");
   },
 };
 
