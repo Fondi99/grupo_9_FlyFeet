@@ -19,7 +19,7 @@ app.set('views', path.resolve(__dirname, './views'));
 app.set("view engine", "ejs");
 // Server routes
 app.use("/admin", adminRouter);
-// app.use("/product", productRouter);
+app.use("/product", productRouter);
 // app.use("/user", userRouter);
 app.use("/", indexRouter);
 // Server listening

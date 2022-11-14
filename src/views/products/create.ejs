@@ -4,7 +4,43 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <h1>Nuevo producto</h1>
+                <h1>Añadir producto</h1>
+
+                <form action="" method="post">
+                    <div>
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" placeholder="Nombre del producto">
+                    </div>
+                    <div>
+                        <label for="descripcion"></label>
+                        <input type="text" name="descripcion" id="descripcion" placeholder="Descripción">
+                    </div>
+                    <div>
+                        <label for="imagen"></label>
+                        <input type="file" name="imagen" id="imagen" accept="png">                        
+                    </div>
+                    <div>
+                        <label for="categoria"></label>
+                        <input type="radio" name="categoria" id="categoria" value="Mochilas" checked>
+                        <input type="radio" name="categoria" id="categoria" value="Accesorios de viaje">
+                        <input type="radio" name="categoria" id="categoria" value="Valijas">
+                    </div>
+                    <div>
+                        <select>
+                            <option value>Color</option>
+                            <option value="Amarillo">Amarillo</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Roja">Roja</option>
+                            <option value="Rosa">Rosa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="precio"></label>
+                        <input type="text" name="precio" id="precio" placeholder="Precio">
+                    </div>
+                </form>
+                - Colores (o cualquier otro campo similar como: tamaños, talles, etc)
+                - Precio (price)
             </main>
             <%- include('../partials/footer') %>
     </body>
