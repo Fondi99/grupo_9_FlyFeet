@@ -143,6 +143,9 @@ footer {
 footer .footer-navbar {
   padding: 10px;
   background-color: #eaeaea;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 footer nav ul li {
@@ -160,7 +163,8 @@ footer nav ul li {
   font-weight: 300;
   color: #9e9e9e;
   padding: 10px;
-  position: relative;
+  width: 100%;
+  position: fixed;
   bottom: 0;
 }
 
