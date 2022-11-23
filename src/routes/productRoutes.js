@@ -7,5 +7,6 @@ const router = Router();
 router
 .get('/', mainController.home)
 .get('/create', productController.create)
+.get('/detail', mainController.product)
 .get('/*', mainController.err404)
 export default router
