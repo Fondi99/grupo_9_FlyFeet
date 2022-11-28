@@ -1,0 +1,56 @@
+<!--  Include de head -->
+<%- include("../partials/head") %>
+
+    <body class="admin">
+        <main>
+            <h1>Consola de administrador</h1>
+            <h2>Productos</h2>
+            <% if(products.length> 0){ %>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>NOMBRE</td>
+                            <td>MARCA</td>
+                            <td>CATEGORIA</td>
+                            <td>PRECIO</td>
+                            <td>COLORES</td>
+                            <td>OPCIONES</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach((product)=> { %>
+                            <tr>
+                                <td>
+                                    <%= product.id %>
+                                </td>
+                                <td>
+                                    <%= product.name %>
+                                </td>
+                                <td>
+                                    <%= product.brand %>
+                                </td>
+                                <td>
+                                    <%= product.category %>
+                                </td>
+                                <td>
+                                    <%= product.price %>
+                                </td>
+                                <td>
+                                    <%= product.colors %>
+                                </td>
+                                <td>
+                                    <a href=<%=`products/${product.id}/edit`%> class="button">EDITAR</a>
+                                </td>
+                            </tr>
+                            <%})%>
+                    </tbody>
+                </table>
+                <% } else { %>
+                    <p>No hay productos cargados</p>
+                <% } %>
+                <a href="products/add">Crear nuevo producto</a>
+        </main>
+    </body>
+
+    </html>

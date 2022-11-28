@@ -1,9 +1,24 @@
 <!--  Include de head -->
 <%- include("../partials/head") %>
 
-    <body>
+    <body class="admin">
         <main>
-            <h1>Consola de administrador</h1>
+            <div id="login-form">
+                <form action="login" method="POST">
+                    <h1>Consola de administrador</h1>
+                    <div class="form-control">
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" placeholder="Ingrese su email">
+                    </div>
+                    <div class="form-control">
+                        <label for="password"></label>
+                        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="form-control">
+                        <button type="submit">Ingresar</button>
+                    </div>
+                </form>
+            </div>
         </main>
     </body>
 

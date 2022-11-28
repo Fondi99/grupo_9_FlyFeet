@@ -5,6 +5,5 @@ const router = Router();
 
 router
 .get('/', mainController.home)
-.get('/*', mainController.err404)
 
 export default router
