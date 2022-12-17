@@ -2,55 +2,66 @@
 <%- include("../partials/head") %>
 
     <body class="admin">
-        <main>
-            <h1>Consola de administrador</h1>
-            <h2>Productos</h2>
-            <% if(products.length> 0){ %>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>NOMBRE</td>
-                            <td>MARCA</td>
-                            <td>CATEGORIA</td>
-                            <td>PRECIO</td>
-                            <td>COLORES</td>
-                            <td>OPCIONES</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% products.forEach((product)=> { %>
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <h1>Consola de administrador</h1>
+                <header>
+                    <h2>Productos</h2>
+                    <div class="options">
+                        <a href="products/add">
+                            <button>
+                                Nuevo
+                            </button>
+                        </a>
+                    </div>
+                </header>
+                <% if(products.length> 0){ %>
+                    <table>
+                        <thead>
                             <tr>
-                                <td>
-                                    <%= product.id %>
-                                </td>
-                                <td>
-                                    <%= product.name %>
-                                </td>
-                                <td>
-                                    <%= product.brand %>
-                                </td>
-                                <td>
-                                    <%= product.category %>
-                                </td>
-                                <td>
-                                    <%= product.price %>
-                                </td>
-                                <td>
-                                    <%= product.colors %>
-                                </td>
-                                <td>
-                                    <a href=<%=`products/${product.id}/edit`%> class="button">EDITAR</a>
-                                </td>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>MARCA</th>
+                                <th>CATEGORIA</th>
+                                <th>PRECIO</th>
+                                <th>COLORES</th>
+                                <th>OPCIONES</th>
                             </tr>
-                            <%})%>
-                    </tbody>
-                </table>
-                <% } else { %>
-                    <p>No hay productos cargados</p>
-                <% } %>
-                <a href="products/add">Crear nuevo producto</a>
-        </main>
+                        </thead>
+                        <tbody>
+                            <% products.forEach((product)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= product.id %>
+                                    </td>
+                                    <td>
+                                        <%= product.name %>
+                                    </td>
+                                    <td>
+                                        <%= product.brand %>
+                                    </td>
+                                    <td>
+                                        <%= product.category %>
+                                    </td>
+                                    <td>
+                                        <%= product.price %>
+                                    </td>
+                                    <td>
+                                        <%= product.colors %>
+                                    </td>
+                                    <td class="option">
+                                        <a href=<%=`products/${product.id}/edit`%>>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p>No hay productos cargados</p>
+                        <% } %>
+            </main>
     </body>
 
     </html>
