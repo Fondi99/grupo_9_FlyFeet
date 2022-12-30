@@ -1,0 +1,138 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DH-FS-Project",
+    "dateExported": "2022-12-30T22:58:11.330Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a3103656-1c70-417d-840b-045b30107a7c",
+            "name": "Products",
+            "containerId": "",
+            "created": "2022-12-29T03:20:40.107Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "33d45b21-68c6-475a-ba57-c0988ecb0b74",
+            "colId": "f02c1ab9-6ede-4381-a99e-8591c523a1b4",
+            "containerId": "a3103656-1c70-417d-840b-045b30107a7c",
+            "name": "Get Products",
+            "url": "{{web_protocol}}://{{web_host}}:{{web_port}}/products",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2022-12-29T03:20:49.217Z",
+            "modified": "2022-12-29T03:25:24.306Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9bba2ffc-a63e-4fb8-a0f8-de6503ef7828",
+            "colId": "f02c1ab9-6ede-4381-a99e-8591c523a1b4",
+            "containerId": "a3103656-1c70-417d-840b-045b30107a7c",
+            "name": "Get Product",
+            "url": "{{web_protocol}}://{{web_host}}:{{web_port}}/products/2",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2022-12-29T03:35:31.759Z",
+            "modified": "2022-12-29T03:51:16.377Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e9172f37-b664-4906-acfd-c1165863c113",
+            "colId": "f02c1ab9-6ede-4381-a99e-8591c523a1b4",
+            "containerId": "a3103656-1c70-417d-840b-045b30107a7c",
+            "name": "Create Product",
+            "url": "{{web_protocol}}://{{web_host}}:{{web_port}}/products",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2022-12-29T03:36:06.630Z",
+            "modified": "2022-12-29T03:39:51.575Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Demo 1"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Esto es una demo"
+                    },
+                    {
+                        "name": "brand",
+                        "value": "Demo"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Demo"
+                    },
+                    {
+                        "name": "price",
+                        "value": "123"
+                    },
+                    {
+                        "name": "colors",
+                        "value": "Verde"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "770b192c-8ac9-41ab-9247-fcfb37ab6c2c",
+            "colId": "f02c1ab9-6ede-4381-a99e-8591c523a1b4",
+            "containerId": "a3103656-1c70-417d-840b-045b30107a7c",
+            "name": "Edit Product",
+            "url": "{{web_protocol}}://{{web_host}}:{{web_port}}/products/1",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2022-12-29T03:54:13.124Z",
+            "modified": "2022-12-29T03:54:40.433Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Demo 1"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Esto es una demo"
+                    },
+                    {
+                        "name": "brand",
+                        "value": "Demo"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Demo"
+                    },
+                    {
+                        "name": "price",
+                        "value": "123"
+                    },
+                    {
+                        "name": "colors",
+                        "value": "Verde"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [],
+        "tests": [],
+        "envId": "82b7f4f8-3c80-45ea-b784-4019bc50857d"
+    }
+}

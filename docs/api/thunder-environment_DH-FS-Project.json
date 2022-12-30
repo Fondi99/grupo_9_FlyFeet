@@ -1,0 +1,21 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "DH-FS-Project",
+    "dateExported": "2022-12-30T23:04:37.712Z",
+    "version": "1.0",
+    "envFile": "",
+    "variables": [
+        {
+            "name": "web_protocol",
+            "value": "http"
+        },
+        {
+            "name": "web_host",
+            "value": "localhost"
+        },
+        {
+            "name": "web_port",
+            "value": "3030"
+        }
+    ]
+}
