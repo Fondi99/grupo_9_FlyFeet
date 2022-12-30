@@ -29,6 +29,6 @@ app.use((req, res, next) => {
     res.status(404).render("not-found")
 })
 // Server listening
-app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
+app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port} (http://localhost:${port})`));
 
 export default app;
