@@ -1,11 +1,17 @@
 import { Router } from 'express';
-import  mainController from '../controllers/mainController.js';
 import  adminController from '../controllers/adminController.js';
 
 const router = Router();
 
 router
-.get('/', adminController.login)
-.get('/*', mainController.err404)
+.get('/', (req, res) => {
+    res.redirect('/admin/products')
+})
+.get('/products', adminController.getProducts)
+.post('/products', adminController.createProduct)
+.get('/products/add', adminController.getProductNew)
+.get('/products/:id/edit', adminController.getProductEdit)
+.put('/products/:id', adminController.editProduct)
+.get('/login', adminController.getLogin)
 
 export default router

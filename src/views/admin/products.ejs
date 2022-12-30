@@ -1,0 +1,67 @@
+<!--  Include de head -->
+<%- include("../partials/head") %>
+
+    <body class="admin">
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <h1>Consola de administrador</h1>
+                <header>
+                    <h2>Productos</h2>
+                    <div class="options">
+                        <a href="products/add">
+                            <button>
+                                Nuevo
+                            </button>
+                        </a>
+                    </div>
+                </header>
+                <% if(products.length> 0){ %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>MARCA</th>
+                                <th>CATEGORIA</th>
+                                <th>PRECIO</th>
+                                <th>COLORES</th>
+                                <th>OPCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach((product)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= product.id %>
+                                    </td>
+                                    <td>
+                                        <%= product.name %>
+                                    </td>
+                                    <td>
+                                        <%= product.brand %>
+                                    </td>
+                                    <td>
+                                        <%= product.category %>
+                                    </td>
+                                    <td>
+                                        <%= product.price %>
+                                    </td>
+                                    <td>
+                                        <%= product.colors %>
+                                    </td>
+                                    <td class="option">
+                                        <a href=<%=`products/${product.id}/edit`%>>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p>No hay productos cargados</p>
+                        <% } %>
+            </main>
+    </body>
+
+    </html>

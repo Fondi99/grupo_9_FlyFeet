@@ -9,7 +9,6 @@ router
 .get('/login', mainController.login)
 .get('/register', mainController.register)
 .get('/product', mainController.product)
-.get('/*', mainController.err404)
 
 
 export default router
