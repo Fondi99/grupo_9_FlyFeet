@@ -12,7 +12,7 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Server
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3000;
 const app = express();
 // Server config
 app.set('views', path.resolve(__dirname, './views'));
