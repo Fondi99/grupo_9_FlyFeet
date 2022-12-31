@@ -1,14 +1,18 @@
-import { Router } from 'express';
-import  mainController from '../controllers/mainController.js';
+import { Router } from "express";
+import {
+  loginValidation,
+  registerValidation,
+} from "../middlewares/formValidators.js";
+import mainController from "../controllers/mainController.js";
 
 const router = Router();
 
 router
-.get('/', mainController.home)
-.get('/cart', mainController.cart)
-.get('/login', mainController.login)
-.get('/register', mainController.register)
-.get('/product', mainController.product)
+  .get("/", mainController.getHome)
+  .get("/cart", mainController.getCart)
+  .get("/login", mainController.getLogin)
+  .post("/login", loginValidation, mainController.login)
+  .get("/register", mainController.getRegister)
+  .post("/register", registerValidation, mainController.register);
 
-
-export default router
+export default router;

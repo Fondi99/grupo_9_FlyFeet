@@ -1,32 +1,73 @@
-import url from "url";
-import path from "path";
-
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+import { check, validationResult } from "express-validator";
+//
+import authService from "../services/authService.js";
+import userService from "../services/userService.js";
+//
 const controller = {
-  home: (req, res) => {
-    return res.render("home");
+  getHome: (req, res) => {
+    res.render("home");
   },
-
-  product: (req, res) => {
-    return res.render("products/detail");
+  getCart: (req, res) => {
+    res.render("cart");
   },
-
-  cart: (req, res) => {
-    return res.render("products/cart");
+  getLogin: (req, res) => {
+    res.render("users/login");
   },
-
   login: (req, res) => {
-    return res.render("users/login");
+    let { email: username, password: password } = req.body;
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let isValid;
+      isValid = authService.login(username, password);
+      if (isValid) {
+        res.redirect("/");
+      } else {
+        res.render("users/login", {
+          errors: {
+            form: { msg: "Las credenciales ingresadas son inválidas" },
+          },
+          form: { email: username },
+        });
+      }
+    } else {
+      res.render("users/login", {
+        errors: errors.mapped(),
+        form: { email: username },
+      });
+    }
   },
-
+  getRegister: (req, res) => {
+    res.render("users/register");
+  },
   register: (req, res) => {
-    return res.render("users/register");
-  },
-
-  err404: (req, res) => {
-    return res.render("errors/err404");
+    let { firstName, lastName, email, password } = req.body;
+    console.log(req.body)
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let { user } = userService.createUser({
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      if (user) {
+        res.render("users/login", {
+          form: { email: email },
+        });
+      } else {
+        res.render("users/register", {
+          errors: {
+            form: { msg: "El email ingresado ya fue utilizado" },
+          },
+          form: { email: email, firstName: firstName, lastName: lastName },
+        });
+      }
+    } else {
+      res.render("users/register", {
+        errors: errors.mapped(),
+        form: { email: email, firstName: firstName, lastName: lastName },
+      });
+    }
   },
 };
 

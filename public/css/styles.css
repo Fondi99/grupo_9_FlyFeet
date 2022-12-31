@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,300&display=swap");
 
+:root {
+  --cadet-blue: #51a3a3ff;
+  --eggplant: #75485eff;
+  --persian-orange: #cb904dff;
+  --arylide-yellow: #dfcc74ff;
+  --yellow-green-crayola: #c3e991ff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,13 +16,25 @@
   font-family: "Libre Franklin", sans-serif;
 }
 
+body {
+  background-color: #f3f3f3;
+}
+
+main {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* Start Navbar styles */
 nav.navbar {
   height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #51a3a3;
+  background-color: var(--cadet-blue);
   color: white;
 }
 
@@ -39,7 +59,7 @@ nav.navbar #myLinks ul {
   position: absolute;
   left: 0;
   top: 65px;
-  background-color: #51a3a3;
+  background-color: var(--cadet-blue);
 }
 
 nav.navbar #myLinks li {
@@ -194,8 +214,16 @@ footer nav ul li {
 form {
   text-align: center;
   width: 80%;
-  margin: auto;
+  max-width: 480px;
+  margin: 42px 20px;
 }
+
+form .form-group label {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
 form input,
 form textarea {
   display: block;
@@ -219,6 +247,15 @@ form button {
   border: none;
   border-radius: 4px;
 }
+
+form .form-group span.error {
+  display: block;
+  color: red;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+}
+
 /* End Login & Register form*/
 
 /* Start Cart*/
@@ -394,7 +431,7 @@ form button {
     flex-direction: row;
     position: relative;
     top: 0;
-    background-color: #51a3a3;
+    background-color: var(--cadet-blue);
   }
   nav.navbar #myLinks {
     display: block;
@@ -404,9 +441,6 @@ form button {
     min-width: 768px;
     max-width: 75%;
     margin: auto;
-  }
-  .banner img {
-    border-radius: 10px;
   }
   article.product {
     width: 23%;
@@ -421,7 +455,6 @@ form button {
     align-items: flex-start;
     height: 180px;
     margin: auto;
-    margin-top: 50px;
     width: 100%;
     height: 200px;
   }
