@@ -42,6 +42,35 @@ const productService = {
     }
     return { product: product };
   },
+
+  editProduct: (productForm) => {
+    let productNew;
+    let archivo = fs.readFileSync(path.join(__dirname, "../../data/products.json"))
+    let objeto = JSON.parse(archivo)
+    let products = objeto.products
+    let lastId = objeto.lastId
+    products = products.map(function (product) {
+      if (product.id == productForm.id) {
+        product = {
+          id: productForm.id,
+          name: productForm.name || "",
+          description: productForm.description || "",
+          brand: productForm.brad || "",
+          category: productForm.category || "",
+          price: productForm.price || "",
+          img: productForm.img || "",
+          colors: productForm.colors || ""
+        }
+        productNew = product
+      }
+      return product
+    })
+    fs.writeFileSync(path.join(__dirname, "../../data/products.json"), JSON.stringify({ lastId: lastId, products: products }))
+    return { product: productNew }
+  }
+
+
+
 };
 
 export default productService;
