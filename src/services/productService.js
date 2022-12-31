@@ -37,7 +37,7 @@ const productService = {
     let { lastId, products } = JSON.parse(
       fs.readFileSync(path.join(__dirname, "../../data/products.json"))
     );
-    if (lastId > id) {
+    if (lastId >= id) {
       product = products.find((product) => product.id == id);
     }
     return { product: product };

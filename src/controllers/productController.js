@@ -2,8 +2,8 @@ import productService from "../services/productService.js";
 
 const controller = {
   getProducts: (req, res) => {
-    let products = productService.getProducts();
-    res.json(products);
+    let { products } = productService.getProducts();
+    res.json({ data: products });
   },
   getProductCreate: (req, res) => {
     let { products } = productService.getProducts();
