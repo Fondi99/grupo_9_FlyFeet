@@ -42,35 +42,57 @@ const productService = {
     }
     return { product: product };
   },
-
   editProduct: (productForm) => {
     let productNew;
-    let archivo = fs.readFileSync(path.join(__dirname, "../../data/products.json"))
-    let objeto = JSON.parse(archivo)
-    let products = objeto.products
-    let lastId = objeto.lastId
+    let archivo = fs.readFileSync(
+      path.join(__dirname, "../../data/products.json")
+    );
+    let objeto = JSON.parse(archivo);
+    let products = objeto.products;
+    let lastId = objeto.lastId;
     products = products.map(function (product) {
       if (product.id == productForm.id) {
         product = {
           id: productForm.id,
           name: productForm.name || "",
           description: productForm.description || "",
-          brand: productForm.brad || "",
+          brand: productForm.brand || "",
           category: productForm.category || "",
           price: productForm.price || "",
           img: productForm.img || "",
-          colors: productForm.colors || ""
-        }
-        productNew = product
+          colors: productForm.colors || "",
+        };
+        productNew = product;
       }
-      return product
-    })
-    fs.writeFileSync(path.join(__dirname, "../../data/products.json"), JSON.stringify({ lastId: lastId, products: products }))
-    return { product: productNew }
-  }
-
-
-
+      return product;
+    });
+    fs.writeFileSync(
+      path.join(__dirname, "../../data/products.json"),
+      JSON.stringify({ lastId: lastId, products: products })
+    );
+    return { product: productNew };
+  },
+  deleteProduct: (id) => {
+    let productDeleted;
+    let { lastId, products } = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "../../data/products.json"))
+    );
+    if (lastId >= id) {
+      products = products.filter((product) => {
+        if (product.id != id) {
+          return true;
+        } else {
+          productDeleted = product;
+          return false;
+        }
+      });
+      fs.writeFileSync(
+        path.join(__dirname, "../../data/products.json"),
+        JSON.stringify({ lastId: lastId, products: products })
+      );
+    }
+    return { product: productDeleted };
+  },
 };
 
 export default productService;

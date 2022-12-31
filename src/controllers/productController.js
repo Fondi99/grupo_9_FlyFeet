@@ -6,8 +6,7 @@ const controller = {
     res.json({ data: products });
   },
   getProductCreate: (req, res) => {
-    let { products } = productService.getProducts();
-    res.json({ data: products });
+    res.render("products/create");
   },
   createProduct: (req, res) => {
     let productForm = {

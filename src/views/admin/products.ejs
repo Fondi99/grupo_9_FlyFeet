@@ -49,9 +49,12 @@
                                     <td>
                                         <%= product.colors %>
                                     </td>
-                                    <td class="option">
+                                    <td class="options">
                                         <a href=<%=`products/${product.id}/edit`%>>
                                             <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                        <a href=<%=`products/${product.id}`%>>
+                                            <i class="fa-regular fa-eye"></i>
                                         </a>
                                     </td>
                                 </tr>

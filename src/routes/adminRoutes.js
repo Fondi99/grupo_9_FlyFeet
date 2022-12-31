@@ -11,7 +11,9 @@ router
 .post('/products', adminController.createProduct)
 .get('/products/add', adminController.getProductNew)
 .get('/products/:id/edit', adminController.getProductEdit)
+.get('/products/:id', adminController.getProduct)
 .put('/products/:id', adminController.editProduct)
+.delete('/products/:id', adminController.deleteProduct)
 .get('/login', adminController.getLogin)
 
 export default router

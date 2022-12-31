@@ -1,10 +1,12 @@
 import fs from "fs";
 import url from "url";
 import path from "path";
-
+//
+import productService from "../services/productService.js";
+//
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
+//
 const controller = {
   getLogin: (req, res) => {
     res.render("./admin/login");
@@ -14,6 +16,11 @@ const controller = {
       fs.readFileSync(path.join(__dirname, "../../data/products.json"))
     );
     res.render("./admin/products", { products: products });
+  },
+  getProduct: (req, res) => {
+    let { id } = req.params;
+    let { product } = productService.getProduct(id);
+    res.render("./admin/product", { product: product });
   },
   getProductEdit: (req, res) => {
     let { id } = req.params;
@@ -55,7 +62,7 @@ const controller = {
       fs.readFileSync(path.join(__dirname, "../../data/products.json"))
     );
     let product = {
-      id: lastId+1,
+      id: lastId + 1,
       name: name,
       description: description,
       brand: brand,
@@ -66,8 +73,13 @@ const controller = {
     products.push(product);
     fs.writeFileSync(
       path.join(__dirname, "../../data/products.json"),
-      JSON.stringify({ lastId: lastId+1, products: products })
+      JSON.stringify({ lastId: lastId + 1, products: products })
     );
+    res.redirect("/admin/products");
+  },
+  deleteProduct: (req, res) => {
+    let { id } = req.params;
+    let product = productService.deleteProduct(id);
     res.redirect("/admin/products");
   },
 };

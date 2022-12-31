@@ -344,14 +344,6 @@ form button {
 
 /* End Shopping Cart */
 
-/* Start Error */
-
-main .error {
-  margin: 20px;
-}
-
-/* End Error */
-
 /* Mobile only */
 
 @media (max-width: 768px) {
@@ -429,9 +421,9 @@ main .error {
     align-items: flex-start;
     height: 180px;
     margin: auto;
-    margin-top:50px;
-    width:100%;
-    height:200px;
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
   }
   .footer-navbar-items {
     width: 25%;
@@ -460,6 +452,7 @@ main .error {
 
 body.admin main {
   margin-top: 24px;
+  padding: 10px;
 }
 
 body.admin main header {
@@ -482,8 +475,30 @@ body.admin main header .options button:hover {
   cursor: pointer;
 }
 
-form .form-control {
+body.admin main form .form-control {
   margin: 20px;
+}
+
+body.admin main form button {
+  cursor: pointer;
+}
+
+body.admin main form button:hover {
+  font-weight: 500;
+}
+
+body.admin main form button.primary {
+  color: #1c1c1c;
+  background-color: #ffa000;
+}
+body.admin main form button.error {
+  color: #333333;
+  background-color: #ebebeb;
+}
+
+body.admin main header .options button:hover {
+  background-color: #b1e66b;
+  cursor: pointer;
 }
 
 body.admin main table {
@@ -497,8 +512,38 @@ body.admin main table td {
   border: 1px solid #dbdbdb;
 }
 
-body.admin main table td.option i {
+body.admin main table td.options {
+  display: flex;
+  justify-content: space-around;
+}
+
+body.admin main table td.options i {
   font-size: 18px;
+}
+
+body.admin main .detail {
+  display: flex;
+  flex-direction: column;
+}
+
+body.admin main .detail .panel {
+  padding: 10px;
+}
+
+body.admin main .detail .section {
+  margin-bottom: 2px;
+}
+
+/* Laptop layout */
+
+@media (min-width: 769px) {
+  body.admin main .detail {
+    flex-direction: row;
+  }
+
+  body.admin main .detail .panel {
+    width: 50%;
+  }
 }
 
 /* End Admin Site */

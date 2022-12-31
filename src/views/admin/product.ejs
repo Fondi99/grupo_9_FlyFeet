@@ -1,0 +1,58 @@
+<!--  Include de head -->
+<%- include("../partials/head") %>
+
+    <body class="admin">
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <h1>Consola de administrador</h1>
+                <header>
+                    <h2>Producto</h2>
+                </header>
+                <div class="detail">
+                    <div class="panel">
+                        <img src=<%=`/images/products/${product.img}` %> alt="Product image" width="100%" %>>
+                    </div>
+                    <div class="panel">
+                        <div class="section">
+                            <h4>Nombre</h4>
+                            <p>
+                                <%=product.name %>
+                            </p>
+                        </div>
+                        <div class="section">
+                            <h4>Descripción</h4>
+                            <p>
+                                <%= product.description %>
+                            </p>
+                        </div>
+                        <div class="section">
+                            <h4>Marca</h4>
+                            <p>
+                                <%=product.brand %>
+                            </p>
+                        </div>
+                        <div class="section">
+                            <h4>Categoria</h4>
+                            <p>
+                                <%=product.category %>
+                            </p>
+                        </div>
+                        <div class="section">
+                            <h4>Precio</h4>
+                            <p>
+                                <%=product.price %>
+                            </p>
+                        </div>
+                        <div class="section">
+                            <h4>Colores</h4>
+                            <p>
+                                <%=product.colors %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+    </body>
+
+    </html>
