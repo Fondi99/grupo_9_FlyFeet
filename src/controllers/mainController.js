@@ -8,7 +8,7 @@ const controller = {
     res.render("home");
   },
   getCart: (req, res) => {
-    res.render("cart");
+    res.render("products/cart");
   },
   getLogin: (req, res) => {
     res.render("users/login");

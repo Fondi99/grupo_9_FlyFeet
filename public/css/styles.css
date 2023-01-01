@@ -392,9 +392,10 @@ form .form-group span.error {
     display: block;
   }
 
-  nav.navbar .user #login span {
+  nav.navbar .user span.login {
     display: none;
   }
+
 }
 
 /* Tablet layout */
