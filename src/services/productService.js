@@ -18,12 +18,13 @@ const productService = {
     );
     let product = {
       id: lastId + 1,
-      name: productForm.name,
-      description: productForm.description,
-      brand: productForm.brand,
-      category: productForm.category,
-      price: productForm.price,
-      colors: productForm.colors,
+      name: productForm.name || "",
+      description: productForm.description || "",
+      brand: productForm.brand || "",
+      category: productForm.category || "",
+      price: productForm.price || "",
+      image: productForm.image || "",
+      colors: productForm.colors || "",
     };
     products.push(product);
     fs.writeFileSync(
@@ -59,7 +60,7 @@ const productService = {
           brand: productForm.brand || "",
           category: productForm.category || "",
           price: productForm.price || "",
-          img: productForm.img || "",
+          image: productForm.image || "",
           colors: productForm.colors || "",
         };
         productNew = product;

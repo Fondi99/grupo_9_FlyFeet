@@ -8,10 +8,10 @@
                 <header>
                     <h2>Producto</h2>
                 </header>
-                <form action=<%=`/admin/products/${product.id}?_method=PUT` %> method="POST" >
+                <form action=<%=`/admin/products/${product.id}?_method=PUT` %> method="POST" enctype="multipart/form-data">
                     <div class="form-control">
                         <label for="name">Nombre:</label>
-                        <input type="text" name="name" id="name" value=<%=product.name %>>
+                        <input type="text" name="name" id="name" value="<%=product.name%>"> 
                     </div>
                     <div class="form-control">
                         <label for="description">Descripción:</label>
@@ -31,11 +31,14 @@
                         <input type="number" name="price" id="price" value=<%=product.price %>>
                     </div>
                     <div class="form-control">
-                        <label for="image">Imagen:</label>
-                        <input type="file" name="img" id="image" value="Imagen del producto">
+                        <label for="image">Imagen:
+                            <img src=<%=`/images/products/${product.image}` %> alt="Product image">
+                        </label>
+                        <input type="file" name="img" id="image" value="Imagen del producto" style="display: none;">
+
                     </div>
                     <div class="form-control">
-                        <label for="colors">Colores:</label>
+                        <label for="colors">Color:</label>
                         <input type="text" name="colors" id="colors" value=<%=product.colors %>>
                     </div>
                     <div class="form-control">
