@@ -9,16 +9,19 @@ module.exports = function (sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING
         },
+        image: {
+            type: DataTypes.STRING
+        },
         price: {
             type: DataTypes.FLOAT
         },
         description: {
             type: DataTypes.TEXT
         },
-        image: {
-            type: DataTypes.STRING
+        price: {
+            type: DataTypes.FLOAT
         },
-        category: {
+        category_id: {
             type: DataTypes.INTEGER
         }
     }
@@ -28,6 +31,20 @@ module.exports = function (sequelize, DataTypes) {
     }
 
     let Producto = sequelize.define(alias, cols, config);
+
+    Producto.associate = function (models) {
+        Producto.belongsTo(models.Categoria, {
+            as: "categoria",
+            foreignKey: "category_id"
+        });
+        Producto.belongsToMany(models.Color, {
+            as: "colores",
+            through: "product_color",
+            foreignKey: "product_id",
+            otherKey: "color_id",
+            timestamps: false
+        })
+    }
 
     return Producto;
 }
