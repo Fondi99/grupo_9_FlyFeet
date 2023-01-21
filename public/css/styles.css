@@ -22,10 +22,10 @@ body {
 
 main {
   background-color: white;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 /* Start Navbar styles */
@@ -59,7 +59,6 @@ nav.navbar #myLinks ul {
   position: absolute;
   left: 0;
   top: 65px;
-  background-color: var(--cadet-blue);
 }
 
 nav.navbar #myLinks li {
@@ -212,10 +211,11 @@ footer nav ul li {
 
 /* Start Login & Register form*/
 form {
+  display: flex;
+  flex-direction: column;  
   text-align: center;
-  width: 80%;
-  max-width: 480px;
   margin: 42px 20px;
+  padding: 10px;
 }
 
 form .form-group label {
@@ -395,7 +395,6 @@ form .form-group span.error {
   nav.navbar .user span.login {
     display: none;
   }
-
 }
 
 /* Tablet layout */
@@ -432,7 +431,6 @@ form .form-group span.error {
     flex-direction: row;
     position: relative;
     top: 0;
-    background-color: var(--cadet-blue);
   }
   nav.navbar #myLinks {
     display: block;
@@ -483,6 +481,10 @@ form .form-group span.error {
 }
 
 /* Start Admin Site */
+
+body.admin header .navbar {
+  background-color: #1c1c1c;
+}
 
 body.admin main {
   margin-top: 24px;

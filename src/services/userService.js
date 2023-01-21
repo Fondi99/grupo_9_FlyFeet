@@ -7,6 +7,14 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Service
 const service = {
+  getUserByEmail: (email) => {
+    let user;
+    let { lastId, users } = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "../../data/users.json"))
+    );    
+    user = users.find((user) => user.email == email);
+    return { user: user };
+  },
   createUser: (userForm) => {
     let { firstName, lastName, email, password } = userForm;
     let { lastId, users } = JSON.parse(

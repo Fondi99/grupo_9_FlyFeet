@@ -5,34 +5,38 @@ import userService from "../services/userService.js";
 //
 const controller = {
   getHome: (req, res) => {
-    res.render("home");
+    res.render("home", { user: req.session.user });
   },
   getCart: (req, res) => {
-    res.render("products/cart");
+    res.render("products/cart", { user: req.session.user });
   },
   getLogin: (req, res) => {
     res.render("users/login");
   },
   login: (req, res) => {
-    let { email: username, password: password } = req.body;
+    let { email: email, password: password } = req.body;
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let isValid;
-      isValid = authService.login(username, password);
+      isValid = authService.login(email, password);
       if (isValid) {
+        let { user } = userService.getUserByEmail(email);
+        if (user) {
+          req.session.user = user;
+        }
         res.redirect("/");
       } else {
         res.render("users/login", {
           errors: {
             form: { msg: "Las credenciales ingresadas son inválidas" },
           },
-          form: { email: username },
+          form: { email: email },
         });
       }
     } else {
       res.render("users/login", {
         errors: errors.mapped(),
-        form: { email: username },
+        form: { email: email },
       });
     }
   },
@@ -41,7 +45,6 @@ const controller = {
   },
   register: (req, res) => {
     let { firstName, lastName, email, password } = req.body;
-    console.log(req.body)
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let { user } = userService.createUser({

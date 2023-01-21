@@ -10,9 +10,6 @@ export const loginValidation = [
   check("password")
     .notEmpty()
     .withMessage("Debes ingresar una contraseña")
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage("Debes ingresar una contraseña válida"),
 ];
 
 export const registerValidation = [
@@ -23,5 +20,5 @@ export const registerValidation = [
     .isEmail().withMessage("Debes ingresar un email válido"),
   check("password")
     .notEmpty().withMessage("Debes ingresar una contraseña").bail()
-    .isLength({ min: 8 }).withMessage("Debes ingresar una contraseña válida"),
+    .isLength({ min: 8 }).withMessage("Debes ingresar una contraseña con al menos 8 carácteres"),
 ];

@@ -1,12 +1,77 @@
 {
-    "lastId": 1,
+    "lastId": 2,
     "users": [
         {
             "id": 1,
+            "firstName": "juan pablo",
+            "lastName": "paillet",
+            "email": "jpaillet@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "firstName": "natalia",
+            "lastName": "krivanek",
+            "email": "nkrivanek@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 3,
+            "firstName": "ximena",
+            "lastName": "camacho",
+            "email": "xcamacho@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 4,
+            "firstName": "lautaro",
+            "lastName": "serrano",
+            "email": "lserrano@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 5,
+            "firstName": "matias",
+            "lastName": "fondini",
+            "email": "mfondini@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 6,
+            "firstName": "natacha",
+            "lastName": "godocik",
+            "email": "ngodocik@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 7,
+            "firstName": "rodrigo",
+            "lastName": "talledo",
+            "email": "rtalledo@flyfeet.com.ar",
+            "password": "$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S",
+            "role": "admin"
+        },
+        {
+            "id": 8,
             "firstName": "Lautaro",
             "lastName": "Serrano",
             "email": "lautaro@flyfeet.com.ar",
-            "password": "$2a$10$I8tjIM5F9e2IXaHHcEUGWO3LAXaWGaGP49C3KTMfmnSFLOzat5f8."
+            "password": "$2a$10$I8tjIM5F9e2IXaHHcEUGWO3LAXaWGaGP49C3KTMfmnSFLOzat5f8.",
+            "role": "user"
+        },
+        {
+            "id": 9,
+            "firstName": "Matias",
+            "lastName": "Serrano",
+            "email": "matias@test.io",
+            "password": "$2a$10$v/saeXSWLYaSRMZpDMZg4e0b8DApgGr5BN2KRyYaQneiDOcoqtl4K",
+            "role": "user"
         }
     ]
 }
