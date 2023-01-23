@@ -396,6 +396,10 @@ form .form-group span.error {
   nav.navbar .user span.login {
     display: none;
   }
+  footer{
+    position: relative;
+    width: 100%;
+  }
 }
 
 /* Tablet layout */
@@ -414,6 +418,10 @@ form .form-group span.error {
     width: 80%;
     margin-bottom: 10px;
     margin: auto;
+  }
+  footer{
+    position: relative;
+    width: 100%;
   }
 }
 
