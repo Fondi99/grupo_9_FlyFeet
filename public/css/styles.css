@@ -157,8 +157,9 @@ article.product .price {
 /*Start Footer*/
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
+  width: 100%;
 }
 footer .footer-navbar {
   padding: 10px;
@@ -170,7 +171,7 @@ footer .footer-navbar {
 
 footer nav ul li {
   padding-left: 10px;
-  display: none;
+  display: flex;
 }
 .footer-navbar-items {
   padding: 10px;
