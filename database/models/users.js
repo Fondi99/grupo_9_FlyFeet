@@ -36,7 +36,13 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
     }
 
-    let Usuarios = sequelize.define(alias, cols, config);
+    let Usuario = sequelize.define(alias, cols, config);
 
-    return Usuarios;
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Pedidos, {
+            as: "pedidos",
+            foreignKey: "user_id"
+        });
+    }
+    return Usuario;
 }

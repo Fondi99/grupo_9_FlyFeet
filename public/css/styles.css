@@ -157,8 +157,9 @@ article.product .price {
 /*Start Footer*/
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
+  width: 100%;
 }
 footer .footer-navbar {
   padding: 10px;
@@ -170,7 +171,7 @@ footer .footer-navbar {
 
 footer nav ul li {
   padding-left: 10px;
-  display: none;
+  display: flex;
 }
 .footer-navbar-items {
   padding: 10px;
@@ -395,6 +396,10 @@ form .form-group span.error {
   nav.navbar .user span.login {
     display: none;
   }
+  footer{
+    position: relative;
+    width: 100%;
+  }
 }
 
 /* Tablet layout */
@@ -413,6 +418,10 @@ form .form-group span.error {
     width: 80%;
     margin-bottom: 10px;
     margin: auto;
+  }
+  footer{
+    position: relative;
+    width: 100%;
   }
 }
 
