@@ -10,26 +10,26 @@
                     </div>
                 </div>
                 <section>
-                    <h1>Ofertas</h1>
+                    <h1>Productos</h1>
                     <div class="articles">
+                        <% for(let product of products){ %>
                         <article class="product">
-                            <a href="/product/detail">
+                            <a href=<%=`/products/${product.id}/detail`%>>
                                 <header>
-                                    <img src="/images/products/HangingToiletryBag.webp" alt="" width="100%">
+                                    <img src=<%=`/images/products/${product.id}/detail`%> alt="" width="100%">
                                 </header>
                                 <div class="info">
                                     <div class="category">
-                                        Organizadores
+                                        <%=`${product.category}`%>
                                     </div>
                                     <div class="title">
-                                        Hanging Toiletry Bag
+                                        <%=`${product.name}`%>
                                     </div>
                                     <div class="price">
-                                        $ 22.500
+                                        <%=`$ ${product.price}`%>
                                     </div>
                                     <div class="review">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i>
+                                        <div class="stars"> 
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -40,87 +40,7 @@
                                 </div>
                             </a>
                         </article>
-                        <article class="product">
-                            <a href="/product/detail">
-                                <header>
-                                    <img src="/images/products/Duffle70L.webp" alt="" width="100%">
-                                </header>
-                                <div class="info">
-                                    <div class="category">
-                                        Bolsos
-                                    </div>
-                                    <div class="title">
-                                        F.A.R Duffle 70L
-                                    </div>
-                                    <div class="price">
-                                        $ 57.000
-                                    </div>
-                                    <div class="review">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star-half"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="product">
-                            <a href="/product">
-                                <header>
-                                    <img src="/images/products/Coast.webp" alt="" width="100%">
-                                </header>
-                                <div class="info">
-                                    <div class="category">
-                                        Maleta
-                                    </div>
-                                    <div class="title">
-                                        Carry-On
-                                    </div>
-                                    <div class="price">
-                                        $ 82.500
-                                    </div>
-                                    <div class="review">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star-half"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="product">
-                            <a href="/product">
-                                <header>
-                                    <img src="/images/products/NeckPillow.webp" alt="" width="100%">
-                                </header>
-                                <div class="info">
-                                    <div class="category">
-                                        Almohadas
-                                    </div>
-                                    <div class="title">
-                                        Travel Neck Pillow
-                                    </div>
-                                    <div class="price">
-                                        $ 16.500
-                                    </div>
-                                    <div class="review">
-                                        <div class="stars">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
+                        <% } %>
                     </div>
                 </section>
             </main>

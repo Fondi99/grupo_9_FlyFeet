@@ -2,10 +2,12 @@ import { check, validationResult } from "express-validator";
 //
 import authService from "../services/authService.js";
 import userService from "../services/userService.js";
+import productService from "../services/productService.js";
 //
 const controller = {
   getHome: (req, res) => {
-    res.render("home", { user: req.session.user });
+    let { products: products } = productService.getProducts();
+    res.render("home", { user: req.session.user, products: products });
   },
   getCart: (req, res) => {
     res.render("products/cart", { user: req.session.user });
