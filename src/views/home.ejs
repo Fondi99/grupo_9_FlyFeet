@@ -12,8 +12,7 @@
                 <section>
                     <h1>Productos</h1>
                     <div class="articles">
-                        
-<% for (let product of Object.values(products)) { %>
+                        <% for (let product of Object.values(products)) { %>
                         <article class="product">
                             <a href=<%=`/products/${product.id}/detail`%>>
                                 <header>

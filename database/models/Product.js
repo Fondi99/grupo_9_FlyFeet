@@ -19,9 +19,6 @@ const model = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.TEXT
         },
-        price: {
-            type: DataTypes.FLOAT
-        },
         category_id: {
             type: DataTypes.INTEGER
         }
