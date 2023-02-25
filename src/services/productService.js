@@ -1,16 +1,19 @@
 import fs from "fs";
 import url from "url";
 import path from "path";
+import db from "../../database/models/index.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const productService = {
-  getProducts: () => {
-    let { products } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/products.json"))
-    );
-    return { products: products };
+  getProducts: async () => {
+    try {
+      let products = await db.Product.findAll({ raw: true });
+      return products;
+    } catch (err) {
+      throw err;
+    }
   },
   createProduct: (productForm) => {
     let { lastId, products } = JSON.parse(
