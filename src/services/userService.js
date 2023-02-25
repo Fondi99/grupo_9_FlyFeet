@@ -10,7 +10,7 @@ const userService = {
   getUsers: async () => {
     try {
       let users;
-      users = await db.User.findAll();
+      users = await db.User.findAll({ raw: true });
       return users;
     } catch (err) {
       throw err;
@@ -18,7 +18,7 @@ const userService = {
   },
   getUser: async (email) => {
     try {
-      let user = await db.User.findOne({ where: { email: email } });
+      let user = await db.User.findOne({ raw: true, where: { email: email } });
       return user;
     } catch (err) {
       throw err;

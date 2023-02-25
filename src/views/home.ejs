@@ -12,7 +12,7 @@
                 <section>
                     <h1>Productos</h1>
                     <div class="articles">
-                        <% Object.values(products).forEach((product) => { %>
+                        <% for (let product of Object.values(products)) { %>
                         <article class="product">
                             <a href=<%=`/products/${product.id}/detail`%>>
                                 <header>
