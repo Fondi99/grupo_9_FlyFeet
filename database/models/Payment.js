@@ -19,8 +19,7 @@ const model = function (sequelize, DataTypes) {
     }
     options = {
         tableName: "payments",
-        createdAt: 'created_at',
-        updatedAt: 'modified_at',
+        timestamps: false,
         charset: "utf8mb4",
         collate: "utf8mb4_unicode_ci"
     }

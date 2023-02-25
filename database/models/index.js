@@ -1,12 +1,12 @@
 import Sequelize from "sequelize";
 import process from "process";
 //
-import Category from "./categories.js";
-import Color from "./colors.js";
-import Order from "./orders.js";
-import Payment from "./payments.js";
-import Product from "./products.js";
-import User from "./users.js";
+import Category from "./Category.js";
+import Color from "./Color.js";
+import Order from "./Order.js";
+import Payment from "./Payment.js";
+import Product from "./Product.js";
+import User from "./User.js";
 
 const config = {
   database: "flyfeet_db",
