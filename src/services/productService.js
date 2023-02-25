@@ -10,6 +10,7 @@ const productService = {
   getProducts: async () => {
     try {
       let products = await db.Product.findAll({ raw: true });
+      console.log(products)
       return products;
     } catch (err) {
       throw err;

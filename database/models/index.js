@@ -11,7 +11,7 @@ import User from "./User.js";
 const config = {
   database: "flyfeet_db",
   username: "root",
-  password: "1234",
+  password: "",
   host: "127.0.0.1",
   dialect: "mysql",
 };
