@@ -1,4 +1,10 @@
-const path = require('path')
+require('babel-register')({
+    presets: [
+        ['babel-preset-env', { targets: { node: 'current' } }]
+    ]
+});
+const path = require('path');
+require("dotenv").config();
 
 module.exports = {
     config: path.resolve('./database/config', 'config.js'),

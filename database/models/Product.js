@@ -1,6 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
-    let alias = "Producto"
-    let cols = {
+const model = function (sequelize, DataTypes) {
+    let modelName, attributes, options;
+    modelName = "Product"
+    attributes = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -25,19 +26,23 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     }
-    let config = {
+    options = {
         tableName: "products",
-        timestamps: false
+        createdAt: 'created_at',
+        updatedAt: 'modified_at',
+        charset: "utf8mb4",
+        collate: "utf8mb4_unicode_ci"
+
     }
 
-    let Producto = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(modelName, attributes, options);
 
-    Producto.associate = function (models) {
-        Producto.belongsTo(models.Categoria, {
+    Product.associate = function (models) {
+        Product.belongsTo(models.Category, {
             as: "categoria",
             foreignKey: "category_id"
         });
-        Producto.belongsToMany(models.Color, {
+        Product.belongsToMany(models.Color, {
             as: "colores",
             through: "product_color",
             foreignKey: "product_id",
@@ -46,5 +51,7 @@ module.exports = function (sequelize, DataTypes) {
         })
     }
 
-    return Producto;
+    return Product;
 }
+
+export default model;

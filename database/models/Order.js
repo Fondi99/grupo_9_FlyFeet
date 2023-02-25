@@ -1,6 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
-    let alias = "Pedido"
-    let cols = {
+const model = function (sequelize, DataTypes) {
+    let modelName, attributes, options;
+    modelName = "Order"
+    attributes = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -16,19 +17,22 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DATE
         }
     }
-    let config = {
+    options = {
         tableName: "orders",
-        timestamps: false
+        createdAt: 'created_at',
+        updatedAt: 'modified_at',
+        charset: "utf8mb4",
+        collate: "utf8mb4_unicode_ci"
     }
 
-    let Order = sequelize.define(alias, cols, config);
+    const Order = sequelize.define(modelName, attributes, options);
 
     Order.associate = function (models) {
-        Order.belongsTo(models.Usuario, {
+        Order.belongsTo(models.User, {
             as: "usuarios",
             foreignKey: "user_id",
         });
-        Order.belongsTo(models, Pagos, {
+        Order.belongsTo(models.Payment, {
             as: "pagos",
             foreignKey: "payment_id"
         })
@@ -36,3 +40,5 @@ module.exports = function (sequelize, DataTypes) {
 
     return Order;
 }
+
+export default model;
