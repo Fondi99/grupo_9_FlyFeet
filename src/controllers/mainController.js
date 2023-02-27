@@ -22,7 +22,7 @@ const controller = {
       let isValid;
       isValid = authService.login(email, password);
       if (isValid) {
-        let { user } = userService.getUserByEmail(email);
+        let { user } = userService.getUser(email);
         if (user) {
           req.session.user = user;
         }

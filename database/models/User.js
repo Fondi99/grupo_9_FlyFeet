@@ -1,6 +1,7 @@
-module.exports = function (sequelize, DataTypes) {
-    let alias = "Usuario"
-    let cols = {
+const model = function (sequelize, DataTypes) {
+    let modelName, attributes, options;
+    modelName = "User"
+    attributes = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -27,22 +28,26 @@ module.exports = function (sequelize, DataTypes) {
         city: {
             type: DataTypes.STRING
         },
-        rol: {
+        role: {
             type: DataTypes.STRING
         }
     }
-    let config = {
+    options = {
         tableName: "users",
-        timestamps: false
-    }
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        charset: "utf8mb4",
+        collate: "utf8mb4_unicode_ci"
+    };
 
-    let Usuario = sequelize.define(alias, cols, config);
+    const User = sequelize.define(modelName, attributes, options);
 
-    Usuario.associate = function (models) {
-        Usuario.hasMany(models.Pedidos, {
+    User.associate = function (models) {
+        User.hasMany(models.Payment, {
             as: "pedidos",
             foreignKey: "user_id"
         });
     }
-    return Usuario;
+    return User;
 }
+export default model;

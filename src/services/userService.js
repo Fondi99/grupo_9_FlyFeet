@@ -1,44 +1,113 @@
-import fs from "fs";
 import url from "url";
 import path from "path";
 import bcrypt from "bcryptjs";
+import db from "../../database/models/index.js";
 // Local variables
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Service
-const service = {
-  getUserByEmail: (email) => {
-    let user;
-    let { lastId, users } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/users.json"))
-    );    
-    user = users.find((user) => user.email == email);
-    return { user: user };
-  },
-  createUser: (userForm) => {
-    let { firstName, lastName, email, password } = userForm;
-    let { lastId, users } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/users.json"))
-    );
-    let newUser;
-    let user = users.find((user) => user.email == email);
-    if (!user) {
-      let hashedPassword = bcrypt.hashSync(password, 10);
-      newUser = {
-        id: lastId + 1,
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: hashedPassword,
-      };
-      users.push(newUser);
-      fs.writeFileSync(
-        path.join(__dirname, "../../data/users.json"),
-        JSON.stringify({ lastId: lastId + 1, users: users })
-      );
+const userService = {
+  getUsers: async () => {
+    try {
+      let users;
+      users = await db.User.findAll({ raw: true });
+      return users;
+    } catch (err) {
+      throw err;
     }
-    return { user: newUser };
   },
+  getUser: async (email) => {
+    try {
+      let user = await db.User.findOne({ raw: true, where: { email: email } });
+      return user;
+    } catch (err) {
+      throw err;
+    }
+  },
+  createUser: async (
+    name,
+    password,
+    email,
+    address,
+    zip,
+    phone_number,
+    city
+  ) => {
+    let userForm = {
+      name: name || undefined,
+      password: (password && bcrypt.hashSync(password, 8)) || undefined,
+      email: email || undefined,
+      address: address || undefined,
+      zip: zip || undefined,
+      phone_number: phone_number || undefined,
+      city: city || undefined
+    };
+    try {
+      let user = await db.User.create(userForm);
+      return user;
+    } catch (err) {
+      throw err;
+    }
+  },
+  updateUser: async (
+    id,
+    name,
+    password,
+    email,
+    address,
+    zip,
+    phone_number,
+    city
+  ) => {
+    let userForm = {
+      name: name || undefined,
+      password: (password && bcrypt.hashSync(password, 8)) || undefined,
+      email: email || undefined,
+      address: address || undefined,
+      zip: zip || undefined,
+      phone_number: phone_number || undefined,
+      city: city || undefined
+    };
+    try {
+      let user = await db.User.update(userForm, {
+        where: {
+          id: id,
+        },
+      }).then((code) => db.User.findByPk(id));
+      return user;
+    } catch (err) {
+      throw err;
+    }
+  },
+  deleteUser: async (id) => {
+    try {
+      let code = await db.User.destroy({
+        where: {
+          id: id,
+        },
+      });
+      return code;
+    } catch (err) {
+      throw err;
+    }
+  },
+  updatePassword: async (id, password) => {
+    let hashedPassword = bcrypt.hashSync(password, 8);
+    try {
+      let code = await db.User.update(
+        { password: hashedPassword },
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
+      let user = await db.User.findByPk(id);
+      return user;
+    } catch (err) {
+      throw err;
+    }
+  }
 };
 
-export default service;
+export default userService;
