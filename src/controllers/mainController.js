@@ -6,7 +6,7 @@ import productService from "../services/productService.js";
 //
 const controller = {
   getHome: (req, res) => {
-    let { products: products } = productService.getProducts();
+    let { products: products } = productService.getProducts();    
     res.render("home", { user: req.session.user, products: products });
   },
   getCart: (req, res) => {
