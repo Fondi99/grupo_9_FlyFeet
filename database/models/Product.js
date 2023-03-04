@@ -36,11 +36,11 @@ const model = function (sequelize, DataTypes) {
 
     Product.associate = function (models) {
         Product.belongsTo(models.Category, {
-            as: "categoria",
+            as: "category",
             foreignKey: "category_id"
         });
         Product.belongsToMany(models.Color, {
-            as: "colores",
+            as: "colors",
             through: "product_color",
             foreignKey: "product_id",
             otherKey: "color_id",

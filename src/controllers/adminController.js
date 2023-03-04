@@ -8,14 +8,14 @@ const controller = {
   getLogin: (req, res) => {
     res.render("./admin/login");
   },
-  login: (req, res) => {
+  login: async (req, res) => {
     let { email: email, password: password } = req.body;
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let isValid;
-      isValid = authService.login(email, password);
+      isValid = await authService.login(email, password);
       if (isValid) {
-        let user = userService.getUser(email);
+        let user = await userService.getUser(email);
         if (user) {
           req.session.user = user;
         }
@@ -35,27 +35,29 @@ const controller = {
       });
     }
   },
-  getProducts: (req, res) => {
-    let products = productService.getProducts();
+  getProducts: async (req, res) => {
+    let { products: products } = await productService.getProducts();
+    console.log(products)
     res.render("./admin/products", {
       user: req.session.user,
       products: products,
     });
   },
-  getProduct: (req, res) => {
+  getProduct: async (req, res) => {
     let { id } = req.params;
-    let { product } = productService.getProduct(id);
+    let { product: product } = await productService.getProduct(id);
+    console.log(product)
     res.render("./admin/product", { user: req.session.user, product: product });
   },
-  getProductEdit: (req, res) => {
+  getProductEdit: async (req, res) => {
     let { id } = req.params;
-    let { product } = productService.getProduct(id);
+    let { product } = await productService.getProduct(id);
     res.render("./admin/productEdit", {
       user: req.session.user,
       product: product,
     });
   },
-  editProduct: (req, res) => {
+  editProduct: async (req, res) => {
     let { id } = req.params;
     let { name, description, brand, category, price, colors } = req.body;
     let productForm = {
@@ -68,13 +70,13 @@ const controller = {
       colors: colors,
       image: req.file?.filename || "default.png",
     };
-    let { product } = productService.editProduct(productForm);
+    let { product } = await productService.editProduct(productForm);
     res.redirect("/admin/products");
   },
   getProductCreate: (req, res) => {
     res.render("./admin/productNew", { user: req.session.user });
   },
-  createProduct: (req, res) => {
+  createProduct: async (req, res) => {
     let { name, description, brand, category, price, colors } = req.body;
     let productForm = {
       name: name,
@@ -85,12 +87,12 @@ const controller = {
       colors: colors,
       image: req.file?.filename || "default.png",
     };
-    let { product } = productService.createProduct(productForm);
+    let { product } = await productService.createProduct(productForm);
     res.redirect("/admin/products");
   },
-  deleteProduct: (req, res) => {
+  deleteProduct: async (req, res) => {
     let { id } = req.params;
-    let product = productService.deleteProduct(id);
+    let product = await productService.deleteProduct(id);
     res.redirect("/admin/products");
   },
 };

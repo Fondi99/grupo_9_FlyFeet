@@ -8,10 +8,11 @@
                 <header>
                     <h2>Producto</h2>
                 </header>
-                <form action=<%=`/admin/products/${product.id}?_method=PUT` %> method="POST" enctype="multipart/form-data">
+                <form action=<%=`/admin/products/${product.id}?_method=PUT` %> method="POST"
+                    enctype="multipart/form-data">
                     <div class="form-control">
                         <label for="name">Nombre:</label>
-                        <input type="text" name="name" id="name" value="<%=product.name%>"> 
+                        <input type="text" name="name" id="name" value="<%=product.name%>">
                     </div>
                     <div class="form-control">
                         <label for="description">Descripción:</label>

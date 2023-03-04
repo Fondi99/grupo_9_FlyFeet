@@ -9,34 +9,81 @@ const __dirname = path.dirname(__filename);
 const productService = {
   getProducts: async () => {
     try {
-      let products = await db.Product.findAll({ raw: true });
-      console.log(products)
-      return products;
+      let products = await db.Product.findAll({
+        raw: true,
+        include: [
+          {
+            model: db.Category,
+            as: "category",
+            foreignKey: "category_id",
+            attributes: ["name"],
+          },
+          {
+            model: db.Color,
+            as: "colors",
+            foreignKey: "color_id",
+            attributes: ["name", "rgb"],
+          },
+        ],
+      });
+      return {
+        products: products.map((product) => ({
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          description: product.description,
+          category: product["category.name"],
+          colorName: product["colors.name"],
+          colorRgb: product["colors.rgb"],
+        })),
+      };
     } catch (err) {
       throw err;
     }
   },
   getProduct: async (id) => {
     try {
-      let product = await db.Product.findByPk(id);
-      return product;
+      let product = await db.Product.findByPk(id, {
+        raw: true,
+        include: [
+          {
+            model: db.Category,
+            as: "category",
+            foreignKey: "category_id",
+            attributes: ["name"],
+          },
+          {
+            model: db.Color,
+            as: "colors",
+            foreignKey: "color_id",
+            attributes: ["name", "rgb"],
+          },
+        ],
+      });
+      return {
+        product: {
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          description: product.description,
+          category: product["category.name"],
+          colorName: product["colors.name"],
+          colorRgb: product["colors.rgb"],
+        },
+      };
     } catch (err) {
       throw err;
     }
   },
-  createProduct: async (
-    name,
-    image,
-    price,
-    description,
-    category_id
-  ) => {
+  createProduct: async (name, image, price, description, category_id) => {
     let productForm = {
       name: name || undefined,
       image: image || undefined,
       price: price || undefined,
       description: description || undefined,
-      category_id: category_id || undefined
+      category_id: category_id || undefined,
     };
     try {
       let product = await db.Product.create(productForm);
@@ -45,20 +92,13 @@ const productService = {
       throw err;
     }
   },
-  editProduct: async (
-    id,
-    name,
-    image,
-    price,
-    description,
-    category_id
-  ) => {
+  editProduct: async (id, name, image, price, description, category_id) => {
     let productForm = {
       name: name || undefined,
       image: image || undefined,
       price: price || undefined,
       description: description || undefined,
-      category_id: category_id || undefined
+      category_id: category_id || undefined,
     };
     try {
       let product = await db.Product.update(productForm, {
@@ -82,7 +122,7 @@ const productService = {
     } catch (err) {
       throw err;
     }
-  }
+  },
 };
 
 export default productService;

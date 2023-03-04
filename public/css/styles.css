@@ -162,15 +162,13 @@ article.product .price {
 /*Start Footer*/
 
 footer {
-  bottom:0;
+  bottom: 0;
   margin-top: auto;
-
 }
 footer .footer-navbar {
   padding: 10px;
   background-color: #eaeaea;
   margin-top: auto;
-
 }
 
 footer nav ul li {
@@ -217,7 +215,7 @@ footer nav ul li {
 /* Start Login & Register form*/
 form {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   text-align: center;
   margin: 42px 20px;
   padding: 10px;
@@ -400,9 +398,9 @@ form .form-group span.error {
   nav.navbar .user span.login {
     display: none;
   }
-  footer{
-    width:100%; 
-  bottom:0; 
+  footer {
+    width: 100%;
+    bottom: 0;
   }
 }
 
@@ -423,10 +421,10 @@ form .form-group span.error {
     margin-bottom: 10px;
     margin: auto;
   }
-  footer{
-    width:100%;  
-  bottom:0; 
-  margin-top: auto;
+  footer {
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
   }
 }
 
@@ -492,9 +490,9 @@ form .form-group span.error {
     margin-top: 0;
   }
   .footer {
-    width:100%; 
-  bottom:0; 
-  margin-top: auto;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
   }
 }
 
@@ -578,7 +576,15 @@ body.admin main table td {
   border: 1px solid #dbdbdb;
 }
 
-body.admin main table td.options {
+body.admin main table .color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: #d6d6d6 solid 1px;
+}
+
+body.admin main table .options {
   display: flex;
   justify-content: space-around;
 }
@@ -598,6 +604,14 @@ body.admin main .detail .panel {
 
 body.admin main .detail .section {
   margin-bottom: 2px;
+}
+
+body.admin main .detail .section .color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: #d6d6d6 solid 1px;
 }
 
 /* Laptop layout */

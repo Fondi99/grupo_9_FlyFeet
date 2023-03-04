@@ -26,12 +26,6 @@
                             </p>
                         </div>
                         <div class="section">
-                            <h4>Marca</h4>
-                            <p>
-                                <%=product.brand %>
-                            </p>
-                        </div>
-                        <div class="section">
                             <h4>Categoria</h4>
                             <p>
                                 <%=product.category %>
@@ -44,9 +38,11 @@
                             </p>
                         </div>
                         <div class="section">
-                            <h4>Colores</h4>
+                            <h4>Color</h4>
+                            <div class="color-box" style="<%=`background: rgb(${product.colorRgb});`%>">
+                            </div>
                             <p>
-                                <%=product.colors %>
+                                <%=product.colorName %>
                             </p>
                         </div>
                     </div>

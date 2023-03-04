@@ -7,14 +7,9 @@ import Order from "./Order.js";
 import Payment from "./Payment.js";
 import Product from "./Product.js";
 import User from "./User.js";
-
-const config = {
-  database: "flyfeet_db",
-  username: "root",
-  password: "",
-  host: "127.0.0.1",
-  dialect: "mysql",
-};
+//
+import config from "../config/config.js"
+// 
 const db = {};
 
 let sequelize;
