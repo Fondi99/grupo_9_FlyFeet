@@ -28,7 +28,7 @@ const model = function (sequelize, DataTypes) {
         city: {
             type: DataTypes.STRING
         },
-        rol: {
+        role: {
             type: DataTypes.STRING
         }
     }

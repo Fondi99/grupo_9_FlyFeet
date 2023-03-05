@@ -5,9 +5,9 @@ import userService from "../services/userService.js";
 import productService from "../services/productService.js";
 //
 const controller = {
-  getHome: (req, res) => {
-    let products = productService.getProducts();
-    res.render("home", { user: req.session.user, products });
+  getHome: async (req, res) => {
+    let { products: products } = await productService.getProducts();    
+    res.render("home", { user: req.session.user, products: products });
   },
   getCart: (req, res) => {
     res.render("products/cart", { user: req.session.user });

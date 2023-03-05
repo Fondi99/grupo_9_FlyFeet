@@ -5,18 +5,18 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <div class="spans">
-                    <span><i class="fa-solid fa-backward"></i>Volver</span>
+                    <a href="/"><span><i class="fa-solid fa-backward"></i>Volver</span></a>
                     <span>Productos</span>
                 </div>
                 <div class="main">
                     <div class="imagenproducto">
-                        <img src="/images/products/neckpillow.webp" width="100%">
+                        <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
                     </div>
                     <div class="titulo">
-                        <span>TRAVEL NECK PILLOW</span>
+                        <span><%=`${product.name}`%></span>
                     </div>
                     <div class="precio">
-                        $16.500
+                        <%=`$ ${product.price}`%>
                     </div>
                     <div class="opciones">
                         <select>
@@ -31,11 +31,8 @@
                         <p>Detalles del producto</p>
                     </div>
                     <div class="detalles2">
-                        <p>Diseñada para ofrecer la máxima comodidad y versatilidad, la almohada para el cuello de viaje
-                            tiene un interior hecho con un núcleo de almohada de espuma y un acolchado acolchado. Es
-                            fácilmente ajustable e incluye una cuerda principal que recorre todo el interior y cuerdas
-                            elásticas en ambos lados para un ajuste de altura ideal. También se puede conectar a The
-                            Travel Blanket a través de botones a presión.</p>
+                        <p><%=`${product.description}`%></p>
+                            
                     </div>
                 </div>
             </main>

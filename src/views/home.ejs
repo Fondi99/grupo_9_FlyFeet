@@ -12,15 +12,15 @@
                 <section>
                     <h1>Productos</h1>
                     <div class="articles">
-                        <% Object.values(products).forEach((product) => { %>
+                        <% for (let product of Object.values(products)) { %>
                         <article class="product">
                             <a href=<%=`/products/${product.id}/detail`%>>
                                 <header>
-                                    <img src=<%=`/images/products/${product.id}/detail`%> alt="" width="100%">
+                                    <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
                                 </header>
                                 <div class="info">
                                     <div class="category">
-                                        <%=`${product.category_id}`%>
+                                        <%=`${product.category}`%>
                                     </div>
                                     <div class="title">
                                         <%=`${product.name}`%>

@@ -2,17 +2,15 @@ import fs from "fs";
 import url from "url";
 import path from "path";
 import bcrypt from "bcryptjs";
+import userService from "./userService.js"
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const service = {
-  login: (username, password) => {
+  login: async (username, password) => {
     let isValid = false;
-    let { users } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/users.json"))
-    );
-    let user = users.find((user) => user.email == username);
+    let user = await userService.getUser(username);
     if (user) {
       isValid = bcrypt.compareSync(password, user.password);
     }

@@ -21,10 +21,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th>NOMBRE</th>
-                                <th>MARCA</th>
                                 <th>CATEGORIA</th>
                                 <th>PRECIO</th>
-                                <th>COLORES</th>
+                                <th>COLOR</th>
                                 <th>OPCIONES</th>
                             </tr>
                         </thead>
@@ -38,24 +37,26 @@
                                         <%= product.name %>
                                     </td>
                                     <td>
-                                        <%= product.brand %>
-                                    </td>
-                                    <td>
                                         <%= product.category %>
                                     </td>
                                     <td>
                                         $ <%= product.price %>
                                     </td>
                                     <td>
-                                        <%= product.colors %>
+                                        <div class="color-box" style="<%=`background: rgb(${product.colorRgb});`%>">
+                                        </div>
+                                        <%= product.colorName %>
                                     </td>
-                                    <td class="options">
-                                        <a href=<%=`products/${product.id}/edit`%>>
-                                            <i class="fa-regular fa-pen-to-square"></i>
-                                        </a>
-                                        <a href=<%=`products/${product.id}`%>>
-                                            <i class="fa-regular fa-eye"></i>
-                                        </a>
+                                    <td>
+                                        <div class="options">
+
+                                            <a href=<%=`products/${product.id}/edit`%>>
+                                                <i class="fa-regular fa-pen-to-square"></i>
+                                            </a>
+                                            <a href=<%=`products/${product.id}`%>>
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
                                     </td>
                                 </tr>
                                 <%})%>

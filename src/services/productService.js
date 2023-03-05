@@ -9,93 +9,119 @@ const __dirname = path.dirname(__filename);
 const productService = {
   getProducts: async () => {
     try {
-      let products = await db.Product.findAll({ raw: true });
-      return products;
+      let products = await db.Product.findAll({
+        raw: true,
+        include: [
+          {
+            model: db.Category,
+            as: "category",
+            foreignKey: "category_id",
+            attributes: ["name"],
+          },
+          {
+            model: db.Color,
+            as: "colors",
+            foreignKey: "color_id",
+            attributes: ["name", "rgb"],
+          },
+        ],
+      });
+      return {
+        products: products.map((product) => ({
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          description: product.description,
+          category: product["category.name"],
+          colorName: product["colors.name"],
+          colorRgb: product["colors.rgb"],
+        })),
+      };
     } catch (err) {
       throw err;
     }
   },
-  createProduct: (productForm) => {
-    let { lastId, products } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/products.json"))
-    );
-    let product = {
-      id: lastId + 1,
-      name: productForm.name || "",
-      description: productForm.description || "",
-      brand: productForm.brand || "",
-      category: productForm.category || "",
-      price: productForm.price || "",
-      image: productForm.image || "",
-      colors: productForm.colors || "",
-    };
-    products.push(product);
-    fs.writeFileSync(
-      path.join(__dirname, "../../data/products.json"),
-      JSON.stringify({ lastId: lastId + 1, products: products })
-    );
-    return { product: product };
-  },
-  getProduct: (id) => {
-    let product;
-    let { lastId, products } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/products.json"))
-    );
-    if (lastId >= id) {
-      product = products.find((product) => product.id == id);
-    }
-    return { product: product };
-  },
-  editProduct: (productForm) => {
-    let productNew;
-    let archivo = fs.readFileSync(
-      path.join(__dirname, "../../data/products.json")
-    );
-    let objeto = JSON.parse(archivo);
-    let products = objeto.products;
-    let lastId = objeto.lastId;
-    products = products.map(function (product) {
-      if (product.id == productForm.id) {
-        product = {
-          id: productForm.id,
-          name: productForm.name || "",
-          description: productForm.description || "",
-          brand: productForm.brand || "",
-          category: productForm.category || "",
-          price: productForm.price || "",
-          image: productForm.image || "",
-          colors: productForm.colors || "",
-        };
-        productNew = product;
-      }
-      return product;
-    });
-    fs.writeFileSync(
-      path.join(__dirname, "../../data/products.json"),
-      JSON.stringify({ lastId: lastId, products: products })
-    );
-    return { product: productNew };
-  },
-  deleteProduct: (id) => {
-    let productDeleted;
-    let { lastId, products } = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "../../data/products.json"))
-    );
-    if (lastId >= id) {
-      products = products.filter((product) => {
-        if (product.id != id) {
-          return true;
-        } else {
-          productDeleted = product;
-          return false;
-        }
+  getProduct: async (id) => {
+    try {
+      let product = await db.Product.findByPk(id, {
+        raw: true,
+        include: [
+          {
+            model: db.Category,
+            as: "category",
+            foreignKey: "category_id",
+            attributes: ["name"],
+          },
+          {
+            model: db.Color,
+            as: "colors",
+            foreignKey: "color_id",
+            attributes: ["name", "rgb"],
+          },
+        ],
       });
-      fs.writeFileSync(
-        path.join(__dirname, "../../data/products.json"),
-        JSON.stringify({ lastId: lastId, products: products })
-      );
+      return {
+        product: {
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          description: product.description,
+          category: product["category.name"],
+          colorName: product["colors.name"],
+          colorRgb: product["colors.rgb"],
+        },
+      };
+    } catch (err) {
+      throw err;
     }
-    return { product: productDeleted };
+  },
+  createProduct: async (name, image, price, description, category_id) => {
+    let productForm = {
+      name: name || undefined,
+      image: image || undefined,
+      price: price || undefined,
+      description: description || undefined,
+      category_id: category_id || undefined,
+    };
+    try {
+      let product = await db.Product.create(productForm);
+      return product;
+    } catch (err) {
+      throw err;
+    }
+  },
+  editProduct: async (id, name, image, price, description, category_id) => {
+    let productForm = {
+      name: name || undefined,
+      image: image || undefined,
+      price: price || undefined,
+      description: description || undefined,
+      category_id: category_id || undefined,
+    };
+    try {
+      let product = await db.Product.update(productForm, {
+        where: {
+          id: id,
+        },
+      }).then((code) => db.Product.findByPk(id));
+      return product;
+    } catch (err) {
+      throw err;
+    }
+  },
+  deleteProduct: async (id) => {
+    try {
+      let code = await db.Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+      return code;
+    } catch (err) {
+      throw err;
+    }
   },
 };
 
