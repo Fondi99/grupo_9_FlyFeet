@@ -25,6 +25,11 @@ const controller = {
     let { product } = productService.getProduct(id);
     res.json({ data: product });
   },
+  getProductDetail: async (req, res) => {
+    let id = req.params.id;
+    let product = await productService.getProduct(id);
+    res.render("products/detail", product);
+  },
   getProductEdit: (req, res) => {
     let { id } = req.params;
     let { product } = productService.getProduct(id);
