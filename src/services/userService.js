@@ -1,10 +1,6 @@
-import url from "url";
-import path from "path";
 import bcrypt from "bcryptjs";
 import db from "../../database/models/index.js";
-// Local variables
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 // Service
 const userService = {
   getUsers: async () => {

@@ -15,31 +15,38 @@ const controller = {
   getLogin: (req, res) => {
     res.render("users/login");
   },
-  login: (req, res) => {
-    let { email: email, password: password } = req.body;
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      let isValid;
-      isValid = authService.login(email, password);
-      if (isValid) {
-        let { user } = userService.getUser(email);
-        if (user) {
+  login: async (req, res) => {
+    let results = validationResult(req);
+    if (results.isEmpty()) {
+      try {
+        let username = req.body;
+        let user = await userService.getUser(username.email);
+        let isValid = await authService.login(username.email, username.password);
+
+        if (isValid) {
+          //si el password es correcto almacenamos el nombre y la categoria del usuario en session
           req.session.user = user;
+          if (req.body.rememberMe) {
+            //si el usuario marca el checkbox creamos una cookie
+            res.cookie('rememberMe', user, { maxAge: 1000 * 60 * 60 * 24 });
+            console.log(res.cookie)
+          }
+          res.redirect("/");
+          // res.send(user)
+        } else {
+          results.errors.push({
+            value: '',
+            msg: 'Contraseña incorrecta',
+            param: 'password',
+            location: 'body'
+          })
+          res.render('./users/login', { errors: results.errors, old: req.body })
         }
-        res.redirect("/");
-      } else {
-        res.render("users/login", {
-          errors: {
-            form: { msg: "Las credenciales ingresadas son inválidas" },
-          },
-          form: { email: email },
-        });
+      } catch (error) {
+        console.log(error);
       }
     } else {
-      res.render("users/login", {
-        errors: errors.mapped(),
-        form: { email: email },
-      });
+      res.render('./users/login', { errors: results.errors, old: req.body })
     }
   },
   getRegister: (req, res) => {

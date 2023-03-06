@@ -1,49 +1,49 @@
 <header>
-    <nav class="navbar">
-        <div class="navbar-toggler">
-            <a><i class="icon fas fa-bars fa-xl"></i></a>
-        </div>
-        <div class="brand">
-            <a href="/">
-                <img src="/images/logo.png" alt="Logo" id="brand-logo">
-            </a>
-        </div>
-        <div id="myLinks" class="icons">
-            <ul>
-                <li>
-                    <a href="/">Categorias</a>
-                </li>
-                <li>
-                    <a href="/">Nuevo</a>
-                </li>
-                <li>
-                    <a href="/">Ofertas</a>
-                </li>
-            </ul>
-        </div>
-        <div class="user">
-            <ul>
-            <% if(locals.user){ %>
-                <li>
-                    <a href="/">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <span class="login"><%= user.firstName %></span>
-                    </a>
-                </li>
-            <% } else { %>
-                <li>
-                    <a href="/login">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <span class="login">Ingresar</span>
-                    </a>
-                </li>
-            <% } %>
-                <li>
-                    <a href="/cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="navbar-toggler">
+      <a><i class="icon fas fa-bars fa-xl"></i></a>
+    </div>
+    <div class="brand">
+      <a href="/">
+        <img src="/images/logo.png" alt="Logo" id="brand-logo" />
+      </a>
+    </div>
+    <div id="myLinks" class="icons">
+      <ul>
+        <li>
+          <a href="/">Categorias</a>
+        </li>
+        <li>
+          <a href="/">Nuevo</a>
+        </li>
+        <li>
+          <a href="/">Ofertas</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user">
+      <ul>
+        <% if(locals.user){ %>
+        <li>
+          <a href="/users/profile">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="login"><%= user.name %></span>
+          </a>
+        </li>
+        <% } else { %>
+        <li>
+          <a href="/login">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="login">Ingresar</span>
+          </a>
+        </li>
+        <% } %>
+        <li>
+          <a href="/cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
