@@ -338,6 +338,10 @@ form .form-group span.error {
   margin: 3px;
 }
 
+.imagenproducto {
+  max-width: 750px;
+}
+
 /* Start Shopping Cart */
 
 .footer {
