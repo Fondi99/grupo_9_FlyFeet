@@ -251,7 +251,7 @@ form button {
   border-radius: 4px;
 }
 
-form .form-group span.error {
+form ul.error {
   display: block;
   color: red;
   font-size: 14px;

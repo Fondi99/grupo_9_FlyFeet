@@ -12,28 +12,25 @@
                         <span class="error"><%=locals.errors?.form && `${errors.form.msg}`%></span>
                     </div>
                     <div class="form-group">
-                        <label for="firstName">Nombre:</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Nombre"
-                            value=<%=locals.form?.firstName && `${form.firstName}`%>>
-                        <span class="error"><%=locals.errors?.firstName && `${errors.firstName.msg}`%></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Apellido:</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Apellido"
-                            value=<%=locals.form?.lastName && `${form.lastName}`%>>
-                        <span class="error"><%=locals.errors?.lastName && `${errors.firstName.msg}`%></span>
+                        <label for="name">Nombre de perfil:</label>
+                        <input type="text" id="name" name="name" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.name : "" %>"/>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="text" id="email" name="email" placeholder="Ej.: ejemplo@mail.com"
-                            value=<%=locals.form?.email && `${form.email}`%>>
-                        <span class="error"><%=locals.errors?.email && `${errors.email.msg}`%></span>
+                        <input requiered type="email" id="email" name="email" placeholder="Ej.: ejemplo@mail.com"
+                        value="<%= typeof old != 'undefined' ? old.email : "" %>"/>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña">
-                        <span class="error"><%=locals.errors?.password && `${errors.password.msg}`%></span>
+                        <input requiered type="password" id="password" name="password" placeholder="Ingrese su contraseña">
                     </div>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(error => { %>
+                           <ul class="error">
+                              <li> <%= error.msg %> </li>
+                           </ul>
+                        <% }) %>
+                     <% } %>
                     <div class="form-group">
                         <button type="submit">Crear cuenta</button>
                     </div>

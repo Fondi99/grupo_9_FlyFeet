@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--head/partial-->
+    <%- include('../partials/head') %>
+    <!--fin head/partial-->
+    <link rel="stylesheet" href="/stylesheets/redirection.css" />
+  </head>
+  <body>
+    <!--header/partial-->
+    <%- include('../partials/header') %>
+    <!--fin header/partial-->
+    <div class="">
+      <div class="">
+        <h2>¡ <%= user.username %> gracias por registrarte!</h2>
+        <h3>Accedé a tu cuenta para ver todos nuestros productos.</h3>
+      </div>
+    </div>
+
+    <!--footer/partial-->
+    <%- include('../partials/footer') %>
+    <!--final footer/partial-->
+    <script>
+      function redirect() {
+        location.href = "/login";
+      }
+      setTimeout("redirect()", 3000);
+    </script>
+  </body>
+</html>

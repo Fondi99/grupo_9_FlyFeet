@@ -6,7 +6,7 @@ import productService from "../services/productService.js";
 //
 const controller = {
   getHome: async (req, res) => {
-    let { products: products } = await productService.getProducts();    
+    let { products: products } = await productService.getProducts();
     res.render("home", { user: req.session.user, products: products });
   },
   getCart: (req, res) => {
@@ -46,32 +46,21 @@ const controller = {
     res.render("users/register");
   },
   register: (req, res) => {
-    let { firstName, lastName, email, password } = req.body;
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      let { user } = userService.createUser({
-        firstName,
-        lastName,
-        email,
-        password,
-      });
-      if (user) {
-        res.render("users/login", {
-          form: { email: email },
-        });
-      } else {
-        res.render("users/register", {
-          errors: {
-            form: { msg: "El email ingresado ya fue utilizado" },
-          },
-          form: { email: email, firstName: firstName, lastName: lastName },
-        });
+    let { name, email, password } = req.body;
+    let results = validationResult(req);
+    if (results.isEmpty()) {
+      try {
+        let user = userService.createUser(
+          name,
+          password,
+          email
+        );
+        res.render("./users/registerRedirect", { user })
+      } catch (err) {
+        console.log(err)
       }
     } else {
-      res.render("users/register", {
-        errors: errors.mapped(),
-        form: { email: email, firstName: firstName, lastName: lastName },
-      });
+      res.render("users/register", { errors: results.errors, old: req.body });
     }
   },
 };

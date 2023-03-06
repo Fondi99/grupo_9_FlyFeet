@@ -13,8 +13,7 @@ export const loginValidation = [
 ];
 
 export const registerValidation = [
-  check("firstName").notEmpty().withMessage("Debes ingresar tu nombre"),
-  check("lastName").notEmpty().withMessage("Debes ingresar tu apellido"),
+  check("name").notEmpty().withMessage("Debes ingresar tu nombre"),
   check("email")
     .notEmpty().withMessage("Debes ingresar un email").bail()
     .isEmail().withMessage("Debes ingresar un email válido"),

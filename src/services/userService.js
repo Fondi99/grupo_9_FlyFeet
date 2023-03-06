@@ -40,7 +40,8 @@ const userService = {
       address: address || undefined,
       zip: zip || undefined,
       phone_number: phone_number || undefined,
-      city: city || undefined
+      city: city || undefined,
+      role: 2
     };
     try {
       let user = await db.User.create(userForm);
