@@ -20,10 +20,6 @@
                             rows="10"><%= product.description %></textarea>
                     </div>
                     <div class="form-control">
-                        <label for="brand">Marca:</label>
-                        <input type="text" name="brand" id="brand" value=<%=product.brand %>>
-                    </div>
-                    <div class="form-control">
                         <label for="category">Categoria:</label>
                         <input type="text" name="category" id="category" value=<%=product.category %>>
                     </div>
@@ -40,7 +36,7 @@
                     </div>
                     <div class="form-control">
                         <label for="colors">Color:</label>
-                        <input type="text" name="colors" id="colors" value=<%=product.colors %>>
+                        <input type="color" name="colors" id="colors" value=<%=product.colors %>>
                     </div>
                     <div class="form-control">
                         <button type="submit" class="primary">Guardar</button>
