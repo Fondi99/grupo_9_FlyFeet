@@ -18,9 +18,6 @@ const model = function (sequelize, DataTypes) {
         },
         description: {
             type: DataTypes.TEXT
-        },
-        category_id: {
-            type: DataTypes.INTEGER
         }
     }
     options = {
@@ -34,19 +31,6 @@ const model = function (sequelize, DataTypes) {
 
     const Product = sequelize.define(modelName, attributes, options);
 
-    Product.associate = function (models) {
-        Product.belongsTo(models.Category, {
-            as: "category",
-            foreignKey: "category_id"
-        });
-        Product.belongsToMany(models.Color, {
-            as: "colors",
-            through: "product_color",
-            foreignKey: "product_id",
-            otherKey: "color_id",
-            timestamps: false
-        })
-    }
 
     return Product;
 }
