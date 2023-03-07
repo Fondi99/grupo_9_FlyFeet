@@ -2,7 +2,8 @@ import { check } from "express-validator";
 
 const adminLoggedIn = (req, res, next) => {
   let { user } = req.session;
-  if (!!user && user.role === "admin") {
+  console.log(user)
+  if (!!user && user.role == "1") {
       next();
 } else {
     res.redirect("/admin/login");

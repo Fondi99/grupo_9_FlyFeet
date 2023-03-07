@@ -33,7 +33,7 @@ const model = function (sequelize, dataTypes) {
       type: dataTypes.DATE,
       defaultValue: dataTypes.NOW,
     },
-    modified_at: {
+    updated_at: {
       type: dataTypes.DATE,
       defaultValue: dataTypes.NOW,
     },

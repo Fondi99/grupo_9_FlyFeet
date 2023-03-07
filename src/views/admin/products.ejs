@@ -21,9 +21,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>NOMBRE</th>
-                                <th>CATEGORIA</th>
                                 <th>PRECIO</th>
-                                <th>COLOR</th>
                                 <th>OPCIONES</th>
                             </tr>
                         </thead>
@@ -37,15 +35,7 @@
                                         <%= product.name %>
                                     </td>
                                     <td>
-                                        <%= product.category %>
-                                    </td>
-                                    <td>
                                         $ <%= product.price %>
-                                    </td>
-                                    <td>
-                                        <div class="color-box" style="<%=`background: rgb(${product.colorRgb});`%>">
-                                        </div>
-                                        <%= product.colorName %>
                                     </td>
                                     <td>
                                         <div class="options">
