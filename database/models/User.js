@@ -29,7 +29,7 @@ const model = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         },
         role: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         }
     }
     options = {
@@ -42,12 +42,6 @@ const model = function (sequelize, DataTypes) {
 
     const User = sequelize.define(modelName, attributes, options);
 
-    User.associate = function (models) {
-        User.hasMany(models.Payment, {
-            as: "pedidos",
-            foreignKey: "user_id"
-        });
-    }
     return User;
 }
 export default model;

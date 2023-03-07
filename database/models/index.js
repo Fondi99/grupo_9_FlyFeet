@@ -1,10 +1,6 @@
 import Sequelize from "sequelize";
 import process from "process";
 //
-import Category from "./Category.js";
-import Color from "./Color.js";
-import Order from "./Order.js";
-import Payment from "./Payment.js";
 import Product from "./Product.js";
 import User from "./User.js";
 //
@@ -24,7 +20,7 @@ if (config.use_env_variable) {
   );
 }
 
-const models = [Category, Color, Order, Payment, Product, User];
+const models = [Product, User];
 
 models.forEach((model) => {
   let modelInit = model(sequelize, Sequelize.DataTypes);

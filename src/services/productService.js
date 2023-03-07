@@ -1,30 +1,10 @@
-import fs from "fs";
-import url from "url";
-import path from "path";
 import db from "../../database/models/index.js";
-
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const productService = {
   getProducts: async () => {
     try {
       let products = await db.Product.findAll({
         raw: true,
-        include: [
-          {
-            model: db.Category,
-            as: "category",
-            foreignKey: "category_id",
-            attributes: ["name"],
-          },
-          {
-            model: db.Color,
-            as: "colors",
-            foreignKey: "color_id",
-            attributes: ["name", "rgb"],
-          },
-        ],
       });
       return {
         products: products.map((product) => ({
@@ -33,9 +13,6 @@ const productService = {
           image: product.image,
           price: product.price,
           description: product.description,
-          category: product["category.name"],
-          colorName: product["colors.name"],
-          colorRgb: product["colors.rgb"],
         })),
       };
     } catch (err) {
@@ -46,20 +23,6 @@ const productService = {
     try {
       let product = await db.Product.findByPk(id, {
         raw: true,
-        include: [
-          {
-            model: db.Category,
-            as: "category",
-            foreignKey: "category_id",
-            attributes: ["name"],
-          },
-          {
-            model: db.Color,
-            as: "colors",
-            foreignKey: "color_id",
-            attributes: ["name", "rgb"],
-          },
-        ],
       });
       return {
         product: {
@@ -67,23 +30,19 @@ const productService = {
           name: product.name,
           image: product.image,
           price: product.price,
-          description: product.description,
-          category: product["category.name"],
-          colorName: product["colors.name"],
-          colorRgb: product["colors.rgb"],
+          description: product.description
         },
       };
     } catch (err) {
       throw err;
     }
   },
-  createProduct: async (name, image, price, description, category_id) => {
+  createProduct: async (name, image, price, description) => {
     let productForm = {
       name: name || undefined,
       image: image || undefined,
       price: price || undefined,
-      description: description || undefined,
-      category_id: category_id || undefined,
+      description: description || undefined
     };
     try {
       let product = await db.Product.create(productForm);
@@ -92,13 +51,12 @@ const productService = {
       throw err;
     }
   },
-  editProduct: async (id, name, image, price, description, category_id) => {
+  editProduct: async (id, name, image, price, description) => {
     let productForm = {
       name: name || undefined,
       image: image || undefined,
       price: price || undefined,
-      description: description || undefined,
-      category_id: category_id || undefined,
+      description: description || undefined
     };
     try {
       let product = await db.Product.update(productForm, {
