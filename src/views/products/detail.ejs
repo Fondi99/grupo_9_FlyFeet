@@ -8,30 +8,22 @@
                     <a href="/"><span><i class="fa-solid fa-backward"></i>Volver</span></a>
                 </div>
                 <div class="main">
-                    <div class="imagenproducto">
+                    <div class="image">
                         <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
                     </div>
-                    <div class="titulo">
-                        <span><%=`${product.name}`%></span>
+                    <div class="title">
+                        <span>
+                            <%=`${product.name}`%>
+                        </span>
                     </div>
-                    <div class="precio">
+                    <div class="price">
                         <%=`$ ${product.price}`%>
                     </div>
-                    <div class="opciones">
-                        <select>
-                            <option value>Elige una opción</option>
-                            <option value="Amarillo">Amarillo</option>
-                            <option value="Azul">Azul</option>
-                            <option value="Roja">Roja</option>
-                            <option value="Rosa">Rosa</option>
-                        </select>
-                    </div>
-                    <div class="detalles">
-                        <p>Detalles del producto</p>
-                    </div>
-                    <div class="detalles2">
-                        <p><%=`${product.description}`%></p>
-                            
+                    <div class="description">
+                        <p>Detalle del producto</p>
+                        <p>
+                            <%=`${product.description}`%>
+                        </p>
                     </div>
                 </div>
             </main>

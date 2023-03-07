@@ -6,10 +6,13 @@
             <main>
                 <h1>Perfil</h1>
                 <div>
-                    <h2>Nombre</h2>
+                    <p>Nombre: <%= user.firstName %></p>
                 </div>
                 <div>
-                    <h2>Email</h2>
+                    <p>Apellido: <%= user.lastName %></p>
+                </div>
+                <div>
+                    <p>Apellido: <%= user.email %></p>
                 </div>
             </main>
             <%- include('../partials/footer') %>

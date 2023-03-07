@@ -10,7 +10,7 @@ router
   .get("/", adminLoggedIn, productController.getProducts)
   .get("/create", adminLoggedIn, productController.getProductCreate)
   .post("/", adminLoggedIn, fileUploader.product, productController.createProduct)
-  .get("/:id/detail", notLoggedIn, productController.getProductDetail)
+  .get("/:id/detail", productController.getProductDetail)
   .get("/:id", adminLoggedIn, productController.getProduct)
   .get("/:id/edit", adminLoggedIn, productController.getProductEdit)
   .put("/:id", adminLoggedIn, productController.editProduct)

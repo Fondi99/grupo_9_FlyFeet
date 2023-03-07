@@ -3,6 +3,7 @@ import path from "path";
 import express from "express";
 import session from "express-session";
 import methodOverride from "method-override";
+import cookieParser from "cookie-parser";
 // Routers
 import indexRouter from "./routes/indexRoutes.js";
 import userRouter from "./routes/userRoutes.js";
@@ -23,6 +24,7 @@ app.use(express.static(path.resolve(__dirname, "../public")));
 app.use(
   session({ secret: SESSION_SECRET, resave: true, saveUninitialized: true })
 );
+app.use(cookieParser());
 app.use(methodOverride("_method"));
 // Server routes
 app.use("/admin", adminRouter);

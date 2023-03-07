@@ -138,13 +138,17 @@ article.product {
 }
 
 article.product a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-decoration: none;
+  align-items: center;
 }
 
-article.product .category {
-  font-size: 12px;
-  font-weight: 300;
-  text-transform: uppercase;
+article.product a header img {
+  border-radius: 4px;
+  padding: 10px;
 }
 
 article.product .title {
@@ -533,6 +537,17 @@ body.admin main header .options button:hover {
 
 body.admin main form .form-control {
   margin: 20px;
+}
+
+#remember-me {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Estilo para la etiqueta */
+label[for="remember-me"] {
+  font-size: 14px;
+  vertical-align: middle;
 }
 
 body.admin main form .form-control img {

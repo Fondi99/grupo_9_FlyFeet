@@ -40,11 +40,8 @@ const controller = {
     let productForm = {
       id: id,
       name: req.body.name,
-      description: req.body.description,
-      brand: req.body.brand,
-      category: req.body.category,
       price: req.body.price,
-      colors: req.body.colors,
+      description: req.body.description,
     };
     let { product } = productService.editProduct(productForm);
     res.json({ data: product });

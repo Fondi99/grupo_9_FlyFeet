@@ -7,7 +7,7 @@ const userService = {
     try {
       let users;
       users = await db.User.findAll({ raw: true });
-      return users;
+      return users.map((user) => parseUser(user));
     } catch (err) {
       throw err;
     }
@@ -15,7 +15,7 @@ const userService = {
   getUser: async (email) => {
     try {
       let user = await db.User.findOne({ raw: true, where: { email: email } });
-      return user;
+      return parseUser(user);
     } catch (err) {
       throw err;
     }
@@ -84,8 +84,22 @@ const userService = {
   },
 };
 
+function parseUser(user) {
+  return {
+    firstName: user.first_name,
+    lastName: user.last_name,
+    email: user.email,
+    password: user.password,
+    role: user.role,
+  };
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
 function normalize(string) {
-  return string.toLowerCase().trim()
+  return string.toLowerCase().trim();
 }
 
 export default userService;

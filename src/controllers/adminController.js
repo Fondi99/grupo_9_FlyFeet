@@ -18,6 +18,10 @@ const controller = {
         let user = await userService.getUser(email);
         if (user) {
           req.session.user = user;
+          if (req.body.rememberMe) {
+            //si el usuario marca el checkbox creamos una cookie
+            res.cookie("rememberMe", user, { maxAge: 1000 * 60 * 60 * 24 });
+          }
         }
         res.redirect("/admin");
       } else {
@@ -37,7 +41,6 @@ const controller = {
   },
   getProducts: async (req, res) => {
     let { products: products } = await productService.getProducts();
-    console.log(products)
     res.render("./admin/products", {
       user: req.session.user,
       products: products,
@@ -46,7 +49,6 @@ const controller = {
   getProduct: async (req, res) => {
     let { id } = req.params;
     let { product: product } = await productService.getProduct(id);
-    console.log(product)
     res.render("./admin/product", { user: req.session.user, product: product });
   },
   getProductEdit: async (req, res) => {
@@ -59,35 +61,24 @@ const controller = {
   },
   editProduct: async (req, res) => {
     let { id } = req.params;
-    let { name, description, brand, category, price, colors } = req.body;
-    let productForm = {
-      id: id,
-      name: name,
-      description: description,
-      brand: brand,
-      category: category,
-      price: price,
-      colors: colors,
-      image: req.file?.filename || "default.png",
-    };
-    let { product } = await productService.editProduct(productForm);
+    let { name, description, price } = req.body;
+    let imagePath = req.file?.filename || "default.png"
+    let { product } = await productService.editProduct(
+      id,
+      name,
+      description,
+      price,
+      imagePath
+    );
     res.redirect("/admin/products");
   },
   getProductCreate: (req, res) => {
     res.render("./admin/productNew", { user: req.session.user });
   },
   createProduct: async (req, res) => {
-    let { name, description, brand, category, price, colors } = req.body;
-    let productForm = {
-      name: name,
-      description: description,
-      brand: brand,
-      category: category,
-      price: price,
-      colors: colors,
-      image: req.file?.filename || "default.png",
-    };
-    let { product } = await productService.createProduct(productForm);
+    let { name, description, price } = req.body;
+    let imagePath = req.file?.filename || "default.png"
+    let { product } = await productService.createProduct(name, description, price, imagePath);
     res.redirect("/admin/products");
   },
   deleteProduct: async (req, res) => {

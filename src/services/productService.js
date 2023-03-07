@@ -30,19 +30,19 @@ const productService = {
           name: product.name,
           image: product.image,
           price: product.price,
-          description: product.description
+          description: product.description,
         },
       };
     } catch (err) {
       throw err;
     }
   },
-  createProduct: async (name, image, price, description) => {
+  createProduct: async (name, description, price, imagePath) => {
     let productForm = {
       name: name || undefined,
-      image: image || undefined,
+      description: description || undefined,
       price: price || undefined,
-      description: description || undefined
+      image: imagePath || undefined,
     };
     try {
       let product = await db.Product.create(productForm);
@@ -51,20 +51,23 @@ const productService = {
       throw err;
     }
   },
-  editProduct: async (id, name, image, price, description) => {
+  editProduct: async (id, name, description, price, imagePath) => {
     let productForm = {
       name: name || undefined,
-      image: image || undefined,
+      description: description || undefined,
       price: price || undefined,
-      description: description || undefined
+      image: imagePath || undefined,
     };
     try {
-      let product = await db.Product.update(productForm, {
+      let resultCode = await db.Product.update(productForm, {
         where: {
           id: id,
         },
-      }).then((code) => db.Product.findByPk(id));
-      return product;
+      });
+      let product = await db.Product.findByPk(id, {
+        raw: true,
+      });
+      return { product: product };
     } catch (err) {
       throw err;
     }
