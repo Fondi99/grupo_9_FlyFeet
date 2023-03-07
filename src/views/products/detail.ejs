@@ -1,32 +1,39 @@
 <!--  Include de head -->
 <%- include("../partials/head.ejs") %>
 
-    <body>
+    <body class="product-detail">
         <%- include("../partials/header.ejs") %>
-            <main>
-                <div class="spans">
-                    <a href="/"><span><i class="fa-solid fa-backward"></i>Volver</span></a>
+        <main>
+            <header>
+                <h2>Producto</h2>
+            </header>
+            <div class="detail">
+                <div class="panel">
+                    <img src=<%=`/images/products/${product.image}` %> alt="Product image" width="100%" %>>
                 </div>
-                <div class="main">
-                    <div class="image">
-                        <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
-                    </div>
-                    <div class="title">
-                        <span>
-                            <%=`${product.name}`%>
-                        </span>
-                    </div>
-                    <div class="price">
-                        <%=`$ ${product.price}`%>
-                    </div>
-                    <div class="description">
-                        <p>Detalle del producto</p>
+                <div class="panel">
+                    <div class="section">
+                        <h4>Nombre</h4>
                         <p>
-                            <%=`${product.description}`%>
+                            <%=product.name %>
+                        </p>
+                    </div>
+                    <div class="section">
+                        <h4>Descripción</h4>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </div>
+                    <div class="section">
+                        <h4>Precio</h4>
+                        <p>
+                           $ <%=product.price %>
                         </p>
                     </div>
                 </div>
-            </main>
+            </div>
+            </div>
+        </main>
             <%- include('../partials/footer') %>
     </body>
 
