@@ -62,6 +62,17 @@ const controller = {
     } else {
       res.render("users/register", { errors: results.errors, old: req.body });
     }
+  },
+  logout: async (req, res) => {
+    try {
+      req.session.destroy();
+      res.clearCookie('rememberMe');
+      res.clearCookie('rememberCategory');
+      res.redirect('/');
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 

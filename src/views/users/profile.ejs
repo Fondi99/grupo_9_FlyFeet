@@ -14,6 +14,9 @@
                 <div>
                     <p>Apellido: <%= user.email %></p>
                 </div>
+                <form action="/users/logout" method="post">
+                    <input type="submit" value="Logout">
+                </form>
             </main>
             <%- include('../partials/footer') %>
     </body>
