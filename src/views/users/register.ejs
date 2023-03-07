@@ -12,8 +12,12 @@
                         <span class="error"><%=locals.errors?.form && `${errors.form.msg}`%></span>
                     </div>
                     <div class="form-group">
-                        <label for="name">Nombre de perfil:</label>
-                        <input type="text" id="name" name="name" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.name : "" %>"/>
+                        <label for="firstName">Nombre:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.firstName : "" %>"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Apellido:</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.lastName : "" %>"/>
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>

@@ -20,24 +20,13 @@ const userService = {
       throw err;
     }
   },
-  createUser: async (
-    name,
-    password,
-    email,
-    address,
-    zip,
-    phone_number,
-    city
-  ) => {
+  createUser: async (firstName, lastName, email, password) => {
     let userForm = {
-      name: name || undefined,
+      first_name: normalize(firstName) || undefined,
+      last_name: normalize(lastName) || undefined,
+      email: normalize(email) || undefined,
       password: (password && bcrypt.hashSync(password, 8)) || undefined,
-      email: email || undefined,
-      address: address || undefined,
-      zip: zip || undefined,
-      phone_number: phone_number || undefined,
-      city: city || undefined,
-      role: 2
+      role: 2,
     };
     try {
       let user = await db.User.create(userForm);
@@ -46,24 +35,12 @@ const userService = {
       throw err;
     }
   },
-  updateUser: async (
-    id,
-    name,
-    password,
-    email,
-    address,
-    zip,
-    phone_number,
-    city
-  ) => {
+  updateUser: async (id, firstName, lastName, email, password) => {
     let userForm = {
-      name: name || undefined,
-      password: (password && bcrypt.hashSync(password, 8)) || undefined,
+      firstName: firstName || undefined,
+      lastName: lastName || undefined,
       email: email || undefined,
-      address: address || undefined,
-      zip: zip || undefined,
-      phone_number: phone_number || undefined,
-      city: city || undefined
+      password: (password && bcrypt.hashSync(password, 8)) || undefined,
     };
     try {
       let user = await db.User.update(userForm, {
@@ -104,7 +81,11 @@ const userService = {
     } catch (err) {
       throw err;
     }
-  }
+  },
 };
+
+function normalize(string) {
+  return string.toLowerCase().trim()
+}
 
 export default userService;
