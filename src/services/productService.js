@@ -25,13 +25,11 @@ const productService = {
         raw: true,
       });
       return {
-        product: {
-          id: product.id,
-          name: product.name,
-          image: product.image,
-          price: product.price,
-          description: product.description,
-        },
+        id: product.id,
+        name: product.name,
+        image: product.image,
+        price: product.price,
+        description: product.description
       };
     } catch (err) {
       throw err;
