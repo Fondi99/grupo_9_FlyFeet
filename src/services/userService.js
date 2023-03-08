@@ -20,13 +20,14 @@ const userService = {
       throw err;
     }
   },
-  createUser: async (firstName, lastName, email, password) => {
+  createUser: async (firstName, lastName, email, password, images) => {
     let userForm = {
       first_name: normalize(firstName) || undefined,
       last_name: normalize(lastName) || undefined,
       email: normalize(email) || undefined,
       password: (password && bcrypt.hashSync(password, 8)) || undefined,
       role: 2,
+      images: images || undefined
     };
     try {
       let user = await db.User.create(userForm);
@@ -35,11 +36,12 @@ const userService = {
       throw err;
     }
   },
-  updateUser: async (id, firstName, lastName, email, password) => {
+  updateUser: async (id, firstName, lastName, email, password, images) => {
     let userForm = {
       firstName: firstName || undefined,
       lastName: lastName || undefined,
       email: email || undefined,
+      images: images || undefined,
       password: (password && bcrypt.hashSync(password, 8)) || undefined,
     };
     try {
@@ -91,6 +93,7 @@ function parseUser(user) {
     email: user.email,
     password: user.password,
     role: user.role,
+    images: user.images
   };
 }
 

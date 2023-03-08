@@ -50,11 +50,11 @@ const controller = {
     res.render("users/register");
   },
   register: (req, res) => {
-    let { firstName, lastName, email, password } = req.body;
+    let { firstName, lastName, email, images, password } = req.body;
     let results = validationResult(req);
     if (results.isEmpty()) {
       try {
-        let user = userService.createUser(firstName, lastName, email, password);
+        let user = userService.createUser(firstName, lastName, email, password, images);
         res.render("./users/registerRedirect", { user });
       } catch (err) {
         console.log(err);

@@ -29,6 +29,10 @@ const model = function (sequelize, dataTypes) {
       values: ["customer", "admin"],
       allowNull: false,
     },
+    images: {
+      type: dataTypes.STRING,
+      allowNull: true,
+    },
     created_at: {
       type: dataTypes.DATE,
       defaultValue: dataTypes.NOW,

@@ -33,7 +33,7 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,11 +60,12 @@ CREATE TABLE `users` (
   `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `password` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `role` int NOT NULL DEFAULT '2',
+  `images` varchar(50) COLLATE utf8mb3_spanish2_ci DEFAULT 'default.png',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish2_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +74,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'juan pablo','paillet','jpaillet@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(2,'natalia','krivanek','nkrivanek@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(3,'ximena','camacho','xcamacho@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(4,'lautaro','serrano','lserrano@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(5,'matias','fondini','mfondini@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(6,'natacha','godocik','ngodocik@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41'),(7,'rodrigo','talledo','rtalledo@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'2023-03-07 21:42:41','2023-03-07 21:42:41');
+INSERT INTO `users` VALUES (1,'juan pablo','paillet','jpaillet@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(2,'natalia','krivanek','nkrivanek@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(3,'ximena','camacho','xcamacho@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(4,'lautaro','serrano','lserrano@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(5,'matias','fondini','mfondini@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(6,'natacha','godocik','ngodocik@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(7,'rodrigo','talledo','rtalledo@flyfeet.com.ar','$2a$10$G.Mg3lXHvYLY.ZgfFtfFl.GNBcbOUFAScHKcC6U5IS4aYKcYPfT2S',1,'default.png','2023-03-07 21:42:41','2023-03-07 21:42:41'),(12,'test','test','test@test.com','$2a$08$I.vkDiOTo06gFyLacdH8uuPxxmybPi.o1Jwo8moIcZCiYOo8vlQgC',2,'default.png','2023-03-08 03:32:04','2023-03-08 03:32:04'),(13,'test','test','test1@test.com','$2a$08$MSo2N6YQa2l.yRr52/pzueCpKXlCjgXaRnSU5KXtkFlQzEr6haoeW',2,'default.png','2023-03-08 04:21:06','2023-03-08 04:21:06');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -86,4 +87,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-07 19:12:56
+-- Dump completed on 2023-03-08  1:26:49
