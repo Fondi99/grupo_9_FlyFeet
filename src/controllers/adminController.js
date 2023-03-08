@@ -88,7 +88,6 @@ const controller = {
   },
   getUsers: async (req, res) => {
     let users = await userService.getUsers();
-    console.log(users);
     res.render("./admin/users", {
       user: req.session.user,
       users: users,

@@ -668,6 +668,9 @@ body.product-detail main .detail {
 body.product-detail main .detail .panel {
   padding: 10px;
 }
+body.product-detail main .detail .panel img {
+  max-width: 500px;
+}
 
 body.product-detail main .detail .section {
   margin-bottom: 2px;
