@@ -86,6 +86,14 @@ const controller = {
     let product = await productService.deleteProduct(id);
     res.redirect("/admin/products");
   },
+  getUsers: async (req, res) => {
+    let users = await userService.getUsers();
+    console.log(users);
+    res.render("./admin/users", {
+      user: req.session.user,
+      users: users,
+    });
+  },
 };
 
 export default controller;

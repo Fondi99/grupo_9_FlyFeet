@@ -1,0 +1,73 @@
+<!--  Include de head -->
+<%- include("../partials/head") %>
+
+    <body class="admin">
+        <%- include("./partials/header.ejs") %>
+            <main>
+                <h1>Consola de administrador</h1>
+                <header>
+                    <h2>Usuarios</h2>
+                    <div class="options">
+                        <a href="/admin/users/create">
+                            <button>
+                                Nuevo
+                            </button>
+                        </a>
+                    </div>
+                </header>
+                <% if(users.length> 0){ %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>APELLIDO</th>
+                                <th>EMAIL</th>
+                                <th>ROL</th>
+                                <th>OPCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach((user)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= user.id %>
+                                    </td>
+                                    <td>
+                                        <%= user.first_name %>
+                                    </td>
+                                    <td>
+                                        <%= user.last_name %>
+                                    </td>
+                                    <td>
+                                        <%= user.email %>
+                                    </td>
+                                    <td>
+                                        <% if (user.role==1){ %>
+                                            <% user.role= "admin" %>
+                                        <% }else{ %>
+                                            <%user.role="user"} %>
+                                            <%= user.role %>
+                                    </td>
+                                    <td>
+                                        <div class="options">
+
+                                            <a href=<%=`users/${user.id}/edit`%>>
+                                                <i class="fa-regular fa-pen-to-square"></i>
+                                            </a>
+                                            <a href=<%=`users/${user.id}`%>>
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p>No hay usuarios cargados</p>
+                        <% } %>
+            </main>
+    </body>
+
+    </html>

@@ -7,7 +7,9 @@ const userService = {
     try {
       let users;
       users = await db.User.findAll({ raw: true });
-      return users.map((user) => parseUser(user));
+      console.log(users);
+      return users
+      //.map((user) => parseUser(user));
     } catch (err) {
       throw err;
     }

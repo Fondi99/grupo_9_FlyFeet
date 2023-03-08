@@ -18,6 +18,7 @@ router
   .get("/products/:id/edit", adminLoggedIn, adminController.getProductEdit)
   .get("/products/:id", adminLoggedIn, adminController.getProduct)
   .put("/products/:id", adminLoggedIn, fileUploader.product, adminController.editProduct)
-  .delete("/products/:id", adminLoggedIn, adminController.deleteProduct);
+  .delete("/products/:id", adminLoggedIn, adminController.deleteProduct)
+  .get("/users", adminLoggedIn, adminController.getUsers)
 
 export default router;
