@@ -5,7 +5,7 @@ import multer from "multer";
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 //
-const storage = multer.diskStorage({
+const storageProduct = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, "../../public/images/products/"));
   },
@@ -15,12 +15,24 @@ const storage = multer.diskStorage({
   },
 });
 
+const storageUser = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "../../public/images/users/"));
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + ".png");
+  },
+});
+
 const upload = {
-  product: multer({ storage: storage }),
+  product: multer({ storage: storageProduct }),
+  user: multer({ storage: storageUser })
 };
 
 const uploaders = {
   product: upload.product.single("img"),
+  user: upload.user.single("img")
 };
 
 export default uploaders;

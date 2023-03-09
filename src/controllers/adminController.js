@@ -78,7 +78,7 @@ const controller = {
   createProduct: async (req, res) => {
     let { name, description, price } = req.body;
     let imagePath = req.file?.filename || "default.png"
-    let { product } = await productService.createProduct(name, description, price, imagePath);
+    await productService.createProduct(name, description, price, imagePath);
     res.redirect("/admin/products");
   },
   deleteProduct: async (req, res) => {
