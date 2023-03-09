@@ -16,10 +16,7 @@ const controller = {
     let productForm = {
       name: req.body.name,
       description: req.body.description,
-      brand: req.body.brand,
-      category: req.body.category,
       price: req.body.price,
-      colors: req.body.colors,
     };
     let { product } = productService.createProduct(productForm);
     res.json({ data: product });
@@ -32,7 +29,6 @@ const controller = {
   getProductDetail: async (req, res) => {
     let id = req.params.id;
     let product = await productService.getProduct(id);
-    console.log(product)
     res.render("products/detail", { user: req.session.user, product: product });
   },
   getProductEdit: (req, res) => {
