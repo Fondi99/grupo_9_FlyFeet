@@ -23,7 +23,6 @@ const controller = {
           if (req.body.rememberMe) {
             //si el usuario marca el checkbox creamos una cookie
             res.cookie("rememberMe", user, { maxAge: 1000 * 60 * 60 * 24 });
-            console.log(res.cookie);
           }
           res.redirect("/");
           // res.send(user)

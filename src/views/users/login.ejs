@@ -19,6 +19,10 @@
                         <label for="password">Contraseña:</label>
                         <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" value="<%= typeof old != 'undefined' ? old.password : "" %>"/>
                     </div>
+                    <div class="form-control remember">
+                        <label for="remember-me">Recordar usuario</label>
+                        <input type="checkbox" name="rememberMe" id="remember-me">
+                    </div>
                     <% if (typeof errors != 'undefined') { %>
                         <% errors.forEach(error => { %>
                          <ul class="error">
