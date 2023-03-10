@@ -28,7 +28,7 @@ const controller = {
   },
   getProductDetail: async (req, res) => {
     let id = req.params.id;
-    let product = await productService.getProduct(id);
+    let { product } = await productService.getProduct(id);
     res.render("products/detail", { user: req.session.user, product: product });
   },
   getProductEdit: (req, res) => {

@@ -1,3 +1,4 @@
+// Esta funcion permite previsualizar la imagen en un formulario 
 function previewImage(event) {
   const preview = document.getElementById("preview");
   const file = event.target.files[0];

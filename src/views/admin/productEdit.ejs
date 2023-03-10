@@ -41,9 +41,7 @@
                         <label for="image">Imagen:
                             <img src=<%=`/images/products/${product.image}` %> alt="Product image" id="preview">
                         </label>
-                        <input type="file" name="img" id="image" value="Imagen del producto" style="display: none;"
-                            onchange="previewImage(event)">
-
+                        <input type="file" name="img" id="image" accept="image/*" style="display: none;" onchange="previewImage(event)">
                     </div>
                     <div class="form-control">
                         <button type="submit" class="primary">Guardar</button>
