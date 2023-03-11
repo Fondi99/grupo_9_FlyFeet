@@ -1,0 +1,63 @@
+<!--  Include de head -->
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+            <script>
+                function previewImage(event) {
+                    const preview = document.getElementById("preview");
+                    const file = event.target.files[0];
+                    const reader = new FileReader();
+
+                    reader.onload = function (event) {
+                        preview.src = event.target.result;
+                        preview.style.display = "block";
+                    };
+
+                    reader.readAsDataURL(file);
+                }
+            </script>
+            <main>
+                <header>
+                    <h2>Usuario</h2>
+                </header>
+                <form action=<%=`/users/profileEdit/${user.id}?_method=PUT` %> method="POST"
+                    enctype="multipart/form-data">
+                    <div class="form-control">
+                        <label for="firstName">Nombre:</label>
+                        <input type="text" name="firstName" id="firstName" value="<%=user.first_name%>">
+                    </div>
+                    <div class="form-control">
+                        <label for="lastName">Apellido:</label>
+                        <input type="text" name="lastName" id="lastName" value="<%=user.last_name%>">
+                    </div>
+                    <div class="form-control">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password" value="<%=user.password%>">
+                    </div>
+                    <div class="form-control">
+                        <label for="image">Imagen:
+                            <img src=<%=`/images/users/${user.images}` %> alt="Product image" id="preview">
+                        </label>
+                        <input type="file" name="img" id="image" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                    </div>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(error => { %>
+                           <ul class="error">
+                              <li> <%= error.msg %> </li>
+                           </ul>
+                        <% }) %>
+                     <% } %>
+                    <div class="form-control">
+                        <button type="submit" class="primary">Editar</button>
+                    </div>
+                </form>
+                <form action=<%=`/users/profileEdit/${user.id}?_method=DELETE` %> method="POST">
+                    <div class="form-control">
+                        <button type="submit" class="error">Eliminar</button>
+                    </div>
+                </form>
+            </main>
+    </body>
+
+    </html>

@@ -57,3 +57,12 @@ export const registerValidation = [
     .isLength({ min: 8 }).withMessage("Debes ingresar una contraseña con al menos 8 carácteres")
     .isAlphanumeric().withMessage('La contraseña debe contener letras y números.').bail(),
 ];
+
+export const editUserValidation = [
+  check("firstName")
+    .notEmpty().withMessage('Nombre no puede estar vacío.').bail()
+    .isLength({ min: 3 }).withMessage('El nombre debe tener mas de dos letras.').bail(),
+  check("lastName")
+    .notEmpty().withMessage('Apellido no puede estar vacío.').bail()
+    .isLength({ min: 3 }).withMessage('El nombre debe tener mas de dos letras.').bail()
+];

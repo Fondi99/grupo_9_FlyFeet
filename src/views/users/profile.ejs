@@ -6,10 +6,10 @@
             <main>
                 <h1>Perfil</h1>
                 <div>
-                    <p>Nombre: <%= user.firstName %></p>
+                    <p>Nombre: <%= user.first_name %></p>
                 </div>
                 <div>
-                    <p>Apellido: <%= user.lastName %></p>
+                    <p>Apellido: <%= user.last_name %></p>
                 </div>
                 <div>
                     <p>Email: <%= user.email %></p>
@@ -19,6 +19,9 @@
                 </div>
                 <form action="/users/logout" method="post">
                     <input type="submit" value="Logout">
+                </form>
+                <form action="/users/profileEdit/<%= user.id %>" method="GET">
+                    <input type="submit" value="Editar">
                 </form>
             </main>
             <%- include('../partials/footer') %>
