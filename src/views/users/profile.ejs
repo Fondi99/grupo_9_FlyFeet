@@ -4,82 +4,30 @@
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <div class="profile">
-                    <div class="profile-picture">
-                        <img src="img/profile-picture.jpg" alt="Profile picture">
-                    </div>
-                    <div class="profile-info">
-                        <h1>
-                            <%= user.firstName %>
-                                <%= user.lastName %>
-                        </h1>
-                        <div class="order-history">
-                            <h2>Historial de pedidos</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Pedido</th>
-                                        <th>Fecha</th>
-                                        <th>Estado</th>
-                                        <th>Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#12345</td>
-                                        <td>10/01/2023</td>
-                                        <td>Entregado</td>
-                                        <td>$50.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#23456</td>
-                                        <td>09/15/2023</td>
-                                        <td>Enviado</td>
-                                        <td>$25.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#34567</td>
-                                        <td>08/28/2023</td>
-                                        <td>Pendiente</td>
-                                        <td>$75.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="addresses">
-                            <h2>Direcciones</h2>
-                            <div class="address-item">
-                                <p>Casa</p>
-                                <p>Juan Pérez</p>
-                                <p>123 Calle Principal</p>
-                                <p>Ciudad de México, México</p>
-                                <p>CP 12345</p>
-                                <p><a href="#">Editar</a></p>
-                            </div>
-                            <div class="address-item">
-                                <p>Trabajo</p>
-                                <p>Juan Pérez</p>
-                                <p>456 Avenida Principal</p>
-                                <p>Ciudad de México, México</p>
-                                <p>CP 12345</p>
-                                <p><a href="#">Editar</a></p>
-                            </div>
-                        </div>
-                    </div>
+                <h1>Perfil</h1>
+                <div>
+                    <p>Nombre: <%= user.first_name %></p>
                 </div>
-                <div class="account-settings">
-                    <h2>Configuración de la cuenta</h2>
-                    <ul>
-                        <li><a href="#">Cambiar contraseña</a></li>
-                        <li>
-                            <form action="/users/logout" method="post">
-                                <input type="submit" value="Cerrar sesión">
-                            </form>
-                    </ul>
+                <div>
+                    <p>Apellido: <%= user.last_name %></p>
                 </div>
-
+                <div>
+                    <p>Email: <%= user.email %></p>
+                </div>
+                <div>
+                    <img src=<%=`/images/users/${user.images}` %> alt="" width="25%" %>>
+                </div>
+                <form action="/users/logout" method="post">
+                    <input type="submit" value="Logout">
+                </form>
+                <form action="/users/profileEdit/<%= user.id %>" method="GET">
+                    <input type="submit" value="Editar">
+                </form>
             </main>
-            <%- include('../partials/footer') %>
+            <footer>
+                <%- include('../partials/footer') %>
+
+            </footer>
     </body>
 
     </html>

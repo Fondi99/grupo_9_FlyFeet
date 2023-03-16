@@ -1,38 +1,48 @@
 <!--  Include de head -->
 <%- include("./partials/head.ejs") %>
 
-    <body>
+    <body id="login">
         <%- include("./partials/header.ejs") %>
-            <main>
-                <div class="banner">
-                    <div class="banner-content">
-                        <img src="/images/banner.webp" alt="" width="100%">
-                    </div>
+        <main>
+            <div class="slogan">
+              <div>VIAJÁ MÁS LIGERO Y</div>
+              <div>MÁS INTELIGENTE</div>
+            </div>
+            <div class="atributes">
+              <div class="options">
+                <img src="/images/securitysafe.png" alt="" />
+                <div class="optionsContainer">
+                  <h2>PAGÁ</h2>
+                  <h2>ONLINE</h2>
+                  <h4>Comprá seguro</h4>
                 </div>
-                <section>
-                    <h1>Productos</h1>
-                    <div class="articles">
-                        <% for (let product of Object.values(products)) { %>
-                        <article class="product">
-                            <a href=<%=`/products/${product.id}/detail`%>>
-                                <header>
-                                    <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
-                                </header>
-                                <div class="info">
-                                    <div class="title">
-                                        <%=`${product.name}`%>
-                                    </div>
-                                    <div class="price">
-                                        <%=`$ ${product.price}`%>
-                                    </div>
-                                </div>
-                            </a>
-                        </article>
-                        <% } %>
-                    </div>
-                </section>
-            </main>
-            <%- include('partials/footer') %>
+              </div>
+              <div class="options">
+                <img src="/images/truckfast.png" alt="" />
+                <div class="optionsContainer">
+                  <h2>ENVÍOS A</h2>
+                  <h2>DOMICILIO</h2>
+                  <h4>A todo el país</h4>
+                </div>
+              </div>
+              <div class="options">
+                <img src="/images/moneys.png" alt="" />
+                <div class="optionsContainer">
+                  <h2>MEDIOS</h2>
+                  <h2>DE PAGO</h2>
+                  <h4>Pagá con tus</h4>
+                  <h4>tarjetas o en efectivo</h4>
+                </div>
+              </div>
+            </div>
+            <p class="frase">
+              Llevá la emoción de viajar contigo a donde quiera que vayas
+            </p>
+          </main>
+          <footer>
+
+              <%- include('partials/footer') %>
+          </footer>
     </body>
 
     </html>

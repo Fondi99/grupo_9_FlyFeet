@@ -24,13 +24,7 @@ const productService = {
       let product = await db.Product.findByPk(id, {
         raw: true,
       });
-      return {
-        id: product.id,
-        name: product.name,
-        image: product.image,
-        price: product.price,
-        description: product.description
-      };
+      return { product: product }
     } catch (err) {
       throw err;
     }
@@ -57,7 +51,7 @@ const productService = {
       image: imagePath || undefined,
     };
     try {
-      let resultCode = await db.Product.update(productForm, {
+      await db.Product.update(productForm, {
         where: {
           id: id,
         },

@@ -62,8 +62,9 @@ const controller = {
   editProduct: async (req, res) => {
     let { id } = req.params;
     let { name, description, price } = req.body;
-    let imagePath = req.file?.filename || "default.png"
-    let { product } = await productService.editProduct(
+    let { product } = await productService.getProduct(id)
+    let imagePath = req.file?.filename || product.image
+    await productService.editProduct(
       id,
       name,
       description,

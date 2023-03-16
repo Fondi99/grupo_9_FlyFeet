@@ -16,7 +16,7 @@ const userService = {
   getUser: async (email) => {
     try {
       let user = await db.User.findOne({ raw: true, where: { email: email } });
-      return parseUser(user);
+      return user;
     } catch (err) {
       throw err;
     }
@@ -46,12 +46,15 @@ const userService = {
       password: (password && bcrypt.hashSync(password, 8)) || undefined,
     };
     try {
-      let user = await db.User.update(userForm, {
+      await db.User.update(userForm, {
         where: {
           id: id,
         },
-      }).then((code) => db.User.findByPk(id));
-      return user;
+      })
+      let user = await db.Product.findByPk(id, {
+        raw: true,
+      });
+      return { user: user };
     } catch (err) {
       throw err;
     }

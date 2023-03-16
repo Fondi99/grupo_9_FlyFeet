@@ -1,8 +1,8 @@
 <!--  Include de head -->
 <%- include("../partials/head") %>
 
-    <body class="admin">
-        <%- include("./partials/header.ejs") %>
+    <body>
+        <%- include("../partials/header.ejs") %>
             <script>
                 function previewImage(event) {
                     const preview = document.getElementById("preview");
@@ -18,41 +18,45 @@
                 }
             </script>
             <main>
-                <h1>Consola de administrador</h1>
-                <div>
-                    <h2>Producto</h2>
-                </div>
-                <form action=<%=`/admin/products/${product.id}?_method=PUT` %> method="POST"
+                <header>
+                    <h2>Usuario</h2>
+                </header>
+                <form action=<%=`/users/profileEdit/${user.id}?_method=PUT` %> method="POST"
                     enctype="multipart/form-data">
                     <div class="form-control">
-                        <label for="name">Nombre:</label>
-                        <input type="text" name="name" id="name" value="<%=product.name%>">
+                        <label for="firstName">Nombre:</label>
+                        <input type="text" name="firstName" id="firstName" value="<%=user.first_name%>">
                     </div>
                     <div class="form-control">
-                        <label for="description">Descripción:</label>
-                        <textarea name="description" id="description" cols="30"
-                            rows="10"><%= product.description %></textarea>
+                        <label for="lastName">Apellido:</label>
+                        <input type="text" name="lastName" id="lastName" value="<%=user.last_name%>">
                     </div>
                     <div class="form-control">
-                        <label for="price">Precio:</label>
-                        <input type="number" name="price" id="price" value=<%=product.price %> step="0.01">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password" value="<%=user.password%>">
                     </div>
                     <div class="form-control">
                         <label for="image">Imagen:
-                            <img src=<%=`/images/products/${product.image}` %> alt="Product image" id="preview">
+                            <img src=<%=`/images/users/${user.images}` %> alt="Product image" id="preview">
                         </label>
                         <input type="file" name="img" id="image" accept="image/*" style="display: none;" onchange="previewImage(event)">
                     </div>
+                    <% if (typeof errors != 'undefined') { %>
+                        <% errors.forEach(error => { %>
+                           <ul class="error">
+                              <li> <%= error.msg %> </li>
+                           </ul>
+                        <% }) %>
+                     <% } %>
                     <div class="form-control">
-                        <button type="submit" class="primary">Guardar</button>
+                        <button type="submit" class="primary">Editar</button>
                     </div>
                 </form>
-                <form action=<%=`/admin/products/${product.id}?_method=DELETE` %> method="POST">
+                <form action=<%=`/users/profileEdit/${user.id}?_method=DELETE` %> method="POST">
                     <div class="form-control">
                         <button type="submit" class="error">Eliminar</button>
                     </div>
                 </form>
-
             </main>
     </body>
 
