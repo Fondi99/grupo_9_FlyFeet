@@ -1,32 +1,23 @@
-<header>
+<header id="nobackround">
   <nav class="navbar">
     <div class="navbar-toggler">
-      <a><i class="icon fas fa-bars fa-xl"></i></a>
+      <a href=""><i class="icon fas fa-bars fa-2xl"></i></a>
     </div>
-    <div class="brand">
+    <div class="logo">
       <a href="/">
-        <img src="/images/logo.png" alt="Logo" id="brand-logo" />
+        <img src="/images/logo.png" alt="Logo" />
+        <span class="fly">FLY</span><span class="feet">FEET</span>
       </a>
     </div>
-    <div id="myLinks" class="icons">
-      <ul>
-        <li>
-          <a href="/admin/products">Productos</a>
-        </li>
-        <li>
-          <a href="/admin/users">Usuarios</a>
-        </li>
-      </ul>
+    <div>
+      <a href="/admin/products">Productos</a>
+      <a href="/admin/users">Usuarios</a>
     </div>
     <div class="user">
-      <ul>
-        <li id="login">
-          <a href="/users/profile">
-            <i class="fa-solid fa-circle-user"></i>
-            <span class="login"><%= user.first_name %></span>
-          </a>
-        </li>
-      </ul>
+      <a href="/users/profile" class="login">
+        <img src="/images/user.png" alt="" />
+        <span><%= user.first_name %></span>
+      </a>
     </div>
   </nav>
 </header>

@@ -1,59 +1,118 @@
 <!--  Include de head -->
 <%- include("../partials/head.ejs") %>
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+  <script>
+    function incrementValue() {
+      let value = parseInt(document.getElementById("number").value, 10);
+      value = isNaN(value) ? 0 : value;
+      if (value < 100) {
+        value++;
+        document.getElementById("number").value = value;
+      }
+    }
+    function decrementValue() {
+      let value = parseInt(document.getElementById("number").value, 10);
+      value = isNaN(value) ? 0 : value;
+      if (value > 1) {
+        value--;
+        document.getElementById("number").value = value;
+      }
+    }
+  </script>
+  </>
     <body>
         <%- include("../partials/header.ejs") %>
-            <main>
-                <div class="contenidoCarrito">
-                    <a class="nombreCart">Carrito de compras:</a>
-                    <div class="cart-items">
-                        <div class="product">
-                            <div class="product-unit">
-                                <img src="/images/products/Coast.webp" alt="00000003" width="80">
-                                <div class="product-description">
-                                    <div class="product-name">Carry-On</div>
-                                    <div class="product-price">$275</div>
-                                </div>
-                            </div>
-                            <div class="product-subtotal">
-                                <div class="quantity">
-                                    <button>-</button>
-                                    <div>1</div>
-                                    <button>+</button>
-                                </div>
-                                <div class="subtotal-price">$275</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="agregarProducto">
-
-                        <i class="fa-solid fa-circle-plus"><input type="submit" value="Agregar Producto/s"></i>
-                        <div class="vaciar">
-                            <input type="submit" value="Vaciar Carrito">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="compraInfo">
-                        <h4>RESUMEN DE COMPRA:</h4>
-                        <br>
-                        <div>Cupon de descuento</div>
-                        <br>
-                        <div>Calcular tiempos y costos de envio</div>
-                        <br>
-                        <div>Subtotal:</div>
-                        <br>
-                        <div>Total:</div>
-                        <br>
-                        <div class="botonCompra">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <input type="submit" value="INICIAR COMPRA" style="font-size: larger" class="botonCart">
-                            </i>
-                        </div>
-                    </div>
+        <main class="cartMain">
+            <h2>Revisa tu carrito</h2>
+            <div class="cartProduct">
+              <img src="/images/product.png" alt="" />
+              <div class="cartProductDetail">
+                <h3>TITLE</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos,
+                  consectetur magnam animi possimus natus quo neque nobis itaque eum
+                  labore quod fugiat corrupti tenetur sint ab officiis laboriosam ad
+                  odio?
+                </p>
+              </div>
+              <div class="cartAmountPrice">
+                <div>
+                  <div class="cartAmount">
+                    <button onclick="incrementValue()" data-qty="1">+</button>
+                    <input
+                      id="number"
+                      data-qty="1"
+                      type="number"
+                      min="1"
+                      value="1"
+                      data-key="myInput1"
+                      style="text-align: center"
+                    />
+                    <button onclick="decrementValue()" data-qty="1">-</button>
+                  </div>
+                  <div class="cartPrice">
+                    <h4>$30.000</h4>
+                  </div>
                 </div>
-            </main>
-            <%- include('../partials/footer') %>
+                <div class="cartRemove">
+                  <a href=""><h5>remove</h5></a>
+                </div>
+              </div>
+            </div>
+            <div class="cartProduct">
+              <img src="/images/product.png" alt="" />
+              <div class="cartProductDetail">
+                <h3>TITLE</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos,
+                  consectetur magnam animi possimus natus quo neque nobis itaque eum
+                  labore quod fugiat corrupti tenetur sint ab officiis laboriosam ad
+                  odio?
+                </p>
+              </div>
+              <div class="cartAmountPrice">
+                <div>
+                  <div class="cartAmount">
+                    <button onclick="incrementValue()" data-qty="1">+</button>
+                    <input
+                      id="number"
+                      data-qty="1"
+                      type="number"
+                      min="1"
+                      value="1"
+                      data-key="myInput1"
+                      style="text-align: center"
+                    />
+                    <button onclick="decrementValue()" data-qty="1">-</button>
+                  </div>
+                  <div class="cartPrice">
+                    <h4>$30.000</h4>
+                  </div>
+                </div>
+                <div class="cartRemove">
+                  <a href=""><h5>remove</h5></a>
+                </div>
+              </div>
+            </div>
+            <div class="cartTotal">
+              <div>Total</div>
+              <div>$60.000</div>
+            </div>
+          </main>
+          <footer id="nobackround">
+              <%- include('../partials/footer') %>
+          </footer>
     </body>
-
 </html>

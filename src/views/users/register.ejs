@@ -1,36 +1,44 @@
 <!--  Include de head -->
 <%- include("../partials/head.ejs") %>
 
-    <body>
+    <body id="register">
         <%- include("../partials/header.ejs") %>
-            <main>
-                <form action="/users/register" method="post" enctype="multipart/form-data">
-                    <header>
-                        <h3>REGÍSTRATE</h4>
-                    </header>
-                    <div class="form-group">
-                        <span class="error"><%=locals.errors?.form && `${errors.form.msg}`%></span>
+            <main class="mainLogin">
+                <div class="loginImg">
+                  <img src="/images/loginpic.png" alt="" class="loginImg" />
+                </div>
+                <div class="loginFormDiv">
+                  <h2 class="bienvenida">Bienvenido!</h2>
+                  <form action="/users/register" method="post" enctype="multipart/form-data">
+                    <div class="loginForm">
+                      <label for="firstName">Nombre:</label>
+                      <input type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.firstName : "" %>"/>
                     </div>
-                    <div class="form-group">
-                        <label for="firstName">Nombre:</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= typeof old != 'undefined' ? old.firstName : "" %>"/>
+                    <div class="loginForm">
+                      <label for="lastName">Apellido:</label>
+                      <input type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.lastName : "" %>"/>
                     </div>
-                    <div class="form-group">
-                        <label for="lastName">Apellido:</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= typeof old != 'undefined' ? old.lastName : "" %>"/>
+                    <div class="loginForm">
+                      <label for="email">Email:</label>
+                      <input requiered type="email" id="email" name="email" placeholder="Ej.: ejemplo@mail.com"
+                      value="<%= typeof old != 'undefined' ? old.email : "" %>"/>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input requiered type="email" id="email" name="email" placeholder="Ej.: ejemplo@mail.com"
-                        value="<%= typeof old != 'undefined' ? old.email : "" %>"/>
+                    <div class="loginForm">
+                      <label for="image">Image:</label>
+                      <input type="file" id="image" name="img" accept="image/*" />
                     </div>
-                    <div class="form-group">
-                        <label for="image">Image:</label>
-                        <input type="file" id="image" name="img" accept="image/*">
+                    <div class="loginForm">
+                      <label for="password">Contraseña:</label>
+                      <input requiered type="password" id="password" name="password" placeholder="Ingrese su contraseña">
                     </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input requiered type="password" id="password" name="password" placeholder="Ingrese su contraseña">
+                    <div class="loginForm">
+                      <label for="confirmPassword">Confirmar contraseña:</label>
+                      <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirme su contraseña"
+                      />
                     </div>
                     <% if (typeof errors != 'undefined') { %>
                         <% errors.forEach(error => { %>
@@ -39,16 +47,19 @@
                            </ul>
                         <% }) %>
                      <% } %>
-                    <div class="form-group">
-                        <button type="submit">Crear cuenta</button>
+                    <div>
+                      <button type="submit" class="form-login">Sign Up</button>
                     </div>
+                    ¿Ya tienes una cuenta?
                     <div class="form-fork">
-                        ¿Ya tienes una cuenta?
                         <a href="/users/login">Iniciá sesión</a>
                     </div>
-                </form>
-            </main>
-            <%- include('../partials/footer') %>
+                  </form>
+                </div>
+              </main>
+              <footer id="nobackround">
+                  <%- include('../partials/footer') %>
+              </footer>
     </body>
 
     </html>

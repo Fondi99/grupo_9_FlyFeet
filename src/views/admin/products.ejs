@@ -5,7 +5,7 @@
         <%- include("./partials/header.ejs") %>
             <main>
                 <h1>Consola de administrador</h1>
-                <header>
+                <div class="productConsole">
                     <h2>Productos</h2>
                     <div class="options">
                         <a href="/admin/products/create">
@@ -14,7 +14,7 @@
                             </button>
                         </a>
                     </div>
-                </header>
+                </div>
                 <% if(products.length> 0){ %>
                     <table>
                         <thead>
