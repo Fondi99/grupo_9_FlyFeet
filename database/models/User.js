@@ -29,7 +29,7 @@ const model = function (sequelize, dataTypes) {
       values: ["customer", "admin"],
       allowNull: false,
     },
-    images: {
+    image: {
       type: dataTypes.STRING,
       allowNull: true,
     },
