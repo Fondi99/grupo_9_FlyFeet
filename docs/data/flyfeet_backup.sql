@@ -60,7 +60,7 @@ CREATE TABLE `users` (
   `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `password` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish2_ci NOT NULL,
   `role` int NOT NULL DEFAULT '2',
-  `images` varchar(50) COLLATE utf8mb3_spanish2_ci DEFAULT 'default.png',
+  `image` varchar(255) COLLATE utf8mb3_spanish2_ci DEFAULT 'default.png',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

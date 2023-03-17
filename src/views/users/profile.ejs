@@ -15,7 +15,7 @@
                     <p>Email: <%= user.email %></p>
                 </div>
                 <div>
-                    <img src=<%=`/images/users/${user.images}` %> alt="" width="100%" %>>
+                    <img src=<%=`/images/users/${user.images}` %> alt="" width="25%" %>>
                 </div>
                 <form action="/users/logout" method="post">
                     <input type="submit" value="Logout">
@@ -24,7 +24,10 @@
                     <input type="submit" value="Editar">
                 </form>
             </main>
-            <%- include('../partials/footer') %>
+            <footer>
+                <%- include('../partials/footer') %>
+
+            </footer>
     </body>
 
     </html>

@@ -1,8 +1,7 @@
-import { check, validationResult } from "express-validator";
+import { validationResult } from "express-validator";
 import productService from "../services/productService.js";
 import userService from "../services/userService.js";
 import authService from "../services/authService.js";
-import bcrypt from "bcryptjs";
 //
 const controller = {
   getLogin: (req, res) => {

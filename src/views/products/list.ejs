@@ -1,12 +1,34 @@
 <!--  Include de head -->
 <%- include("../partials/head.ejs") %>
-
     <body>
         <%- include("../partials/header.ejs") %>
             <main>
-                <h1>Productos</h1>
+                <section>
+                    <h1>Productos</h1>
+                    <div class="articles">
+                        <% for (let product of Object.values(products)) { %>
+                        <article class="product">
+                            <a href=<%=`/products/${product.id}/detail`%>>
+                                <div>
+                                    <img src=<%=`/images/products/${product.image}`%> alt="" width="100%">
+                                </div>
+                                <div class="info">
+                                    <div class="title">
+                                        <%=`${product.name}`%>
+                                    </div>
+                                    <div class="price">
+                                        <%=`$ ${product.price}`%>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <% } %>
+                    </div>
+                </section>
             </main>
-            <%- include('../partials/footer') %>
+            <footer id="nobackround">
+                <%- include('../partials/footer') %>
+            </footer>
     </body>
 
     </html>

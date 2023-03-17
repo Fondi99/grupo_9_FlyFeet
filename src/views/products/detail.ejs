@@ -1,8 +1,9 @@
 <!--  Include de head -->
 <%- include("../partials/head.ejs") %>
 
-    <body class="product-detail">
+    <body id="productDetail">
         <%- include("../partials/header.ejs") %>
+<<<<<<< HEAD
         <main>
             <header>
                 <h2>Producto</h2>
@@ -37,10 +38,29 @@
                     </div>
                     
                 </div>
+=======
+        <main class="mainLogin">
+            <div class="mobileProductDetails">
+              <h2><%=product.name %></h2>
+>>>>>>> dc86f12e83efdeb7b30af9e860723c0999eaca8c
             </div>
+            <div class="productImage">
+              <img
+                src=<%=`/images/products/${product.image}` %>
+                alt="Product image"
+                class="productImg"
+              />
             </div>
-        </main>
+            <div class="productDetails">
+              <h5>Categoria</h5>
+              <h2><%=product.name %></h2>
+              <p><%= product.description %></p>
+              <h4>$ <%=product.price %></h4>
+              <button class="cartButton">Agregar al Carrito</button>
+          </main>
+          <footer id="nobackround">
             <%- include('../partials/footer') %>
+            </footer>
     </body>
 
 
