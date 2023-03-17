@@ -101,6 +101,7 @@ nav.navbar .user i {
   font-size: 20px;
   margin: 6px;
 }
+
 /* End Navbar */
 
 /* Start Main */
@@ -160,6 +161,13 @@ article.product .title {
 article.product .price {
   font-size: 18px;
 }
+
+.imgP:hover{
+  -webkit-transform:scale(1.3);
+  transition: 0.5s;
+  transform:scale(1.5);
+  rotate:360deg
+  }
 
 /* End Main */
 
