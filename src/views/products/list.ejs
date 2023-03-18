@@ -4,6 +4,23 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <section>
+                    <div class="container-slider">
+                     <div class="slider" id="slider">
+                        <div class="slider__section">
+                            <img src="../images/banner.webp" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider1.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider2.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider3.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider4.jpg" alt="" class="slider__img"></div>
+                    </div>
+                    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+                    <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+                </div>
+                <script src="slider.js"></script>
                     <h1>Productos</h1>
                     <div class="articles">
                         <% for (let product of Object.values(products)) { %>
