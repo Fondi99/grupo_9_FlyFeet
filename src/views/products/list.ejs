@@ -4,7 +4,24 @@
         <%- include("../partials/header.ejs") %>
             <main>
                 <section>
-                    <h1>Productos</h1>
+                    <div class="container-slider" id="slider__container">
+                     <div class="slider" id="slider">
+                        <div class="slider__section">
+                            <img src="../images/banner.webp" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider1.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider2.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider3.jpg" alt="" class="slider__img"></div>
+                        <div class="slider__section">
+                            <img src="../images/slider4.jpg" alt="" class="slider__img"></div>
+                    </div>
+                    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+                    <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+                </div>
+                <br>
+                    <h1>Nuestra colección</h1>
                     <div class="articles">
                         <% for (let product of Object.values(products)) { %>
                         <article class="product">
@@ -29,6 +46,49 @@
             <footer id="nobackround">
                 <%- include('../partials/footer') %>
             </footer>
+            <script>const sliderContainer = document.getElementById('slider-container')
+                const slider = document.getElementById("slider");
+                let sliderSection = document.querySelectorAll(".slider__section");
+                let sliderSectionLast = sliderSection[sliderSection.length -1];
+                
+                const btnLeft = document.getElementById("btn-left");
+                const btnRight = document.getElementById("btn-right");
+                
+                slider.insertAdjacentElement('afterbegin', sliderSectionLast); 
+                
+                function Next() {
+                    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+                    slider.style.marginLeft = "-200%";
+                    slider.style.transition = "all 0.5s";
+                    setTimeout(function(){
+                        slider.style.transition= "none";
+                        slider.insertAdjacentElement("beforeend", sliderSectionFirst);
+                        slider.style.marginLeft = "-100%";
+                    }, 500);
+                    }
+                
+                function Prev() {
+                    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+                    slider.style.marginLeft = "0%";
+                    slider.style.transition = "all 0.5s";
+                    setTimeout(function(){
+                        slider.style.transition= "none";
+                        slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+                        slider.style.marginLeft = "-100%";
+                    }, 500);
+                }
+                
+                btnRight.addEventListener('click', function(){
+                    Next();
+                });
+                
+                btnLeft.addEventListener('click', function(){
+                    Prev();
+                })
+                
+                setInterval(function(){
+                    Next();
+                }, 5000);</script>
     </body>
 
     </html>
