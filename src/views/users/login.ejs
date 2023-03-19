@@ -5,10 +5,10 @@
         <%- include("../partials/header.ejs") %>
             <main class="mainLogin">
                 <div class="loginImg">
-                  <img src="/images/loginpic.png" alt="" />
+                  <img src="/images/login.png" alt="" />
                 </div>
                 <div class="loginFormDiv">
-                  <h2 class="bienvenida">Bienvenido de vuelta!</h2>
+                  <h2 class="bienvenida">¡BIENVENIDO DE VUELTA!</h2>
                   <span class="error"><%=locals.errors?.form && `${errors.form.msg}`%></span>
                   <form action="/users/login" method="POST">
                     <div class="loginForm">
@@ -34,9 +34,9 @@
                     <div class="formcheckbox">
                       <div>
                         <input type="checkbox" name="rememberMe" id="remember-me" />
-                        <label for="remember-me">Recuerdame</label>
+                        <label for="remember-me">Recuérdame</label>
                       </div>
-                      <a href="/password_reset">Olvidaste tu contraseña?</a>
+                      <a href="/password_reset" style="text-decoration:none">¿Olvidaste tu contraseña?</a>
                     </div>
                     <% if (typeof errors != 'undefined') { %>
                         <% errors.forEach(error => { %>
@@ -49,7 +49,7 @@
                       <button type="submit" class="form-login">Login</button>
                     </div>
                     <div>
-                      <a href="/users/register" class="form-fork">Creá tu cuenta</a>
+                      <a href="/users/register" style="text-decoration:none" class="form-fork">Creá tu cuenta</a>
                     </div>
                   </form>
                 </div>

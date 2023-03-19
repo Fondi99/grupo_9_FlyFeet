@@ -19,16 +19,8 @@
 body {
   background: none;
 }
-#nobackround {
-  background: none;
-}
 
 #login {
-  background: url(/images/Fondo.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -37,8 +29,37 @@ body {
 header {
   width: 100%;
   height: 175px;
-  background: linear-gradient(180deg, #e5d9b6 0%, rgba(229, 217, 182, 0) 100%);
+  
 }
+
+.barra{
+  text-align: center;
+  background-color: rgb(223, 204, 116);
+  padding: 20px;
+}
+.productosheader {
+  background-color: #ffffff;
+  border-radius: 9px;
+  color: #48392a;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  white-space: nowrap;
+  width: 200px;
+  text-align: center;
+}
+
+.search-bar-magnifying-glass{
+  text-align: center;
+  display: flex;
+} 
+
+.id-fa-magnifying-glass{
+  height: 50%;
+}
+
 .navbar-toggler {
   display: flex;
   margin-left: 25px;
@@ -51,13 +72,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--cadet-blue);
-  color: #ffffff;
+  background-color: rgb(81, 163, 163);
 }
 
 nav .logo {
   display: flex;
   padding: 5px;
+  text-align: center;
 }
 nav .logo a {
   display: flex;
@@ -92,7 +113,7 @@ nav .logo .feet {
   color: #ffffff;
 }
 nav .products {
-  font-family: "Oswald";
+  font-family: "Libre Franklin";
   background-color: #ffffff;
   color: #285430;
   border-radius: 9px;
@@ -168,13 +189,14 @@ main .atributes .options {
   padding: 20px;
   justify-content: space-evenly;
   align-items: center;
+  height: 200px;
 }
 main .options img {
-  height: 71%;
+  height: 100%;
 }
 
 main .optionsContainer h2 {
-  color: #285430;
+  color: rgb(81, 163, 163);
   font-size: 28px;
   padding-left: 5px;
   font-family: "Oswald";
@@ -190,20 +212,31 @@ main .optionsContainer h4 {
   font-weight: 400;
   font-size: 14px;
   line-height: 23px;
+  color: #48392a;
 
-  color: #2e2e2e;
+}
+
+.mensaje {
+  color: white;
+  text-align: center;
+  background-color: #48392a;
+  padding: 15px;
+
+}
+
+.barra3{
+  background-color: rgb(81, 163, 163);
 }
 
 main .frase {
-  background-color: #e5d9b6;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
   line-height: 47px;
   text-align: center;
-  color: #285430;
-  padding-bottom: 88px;
+  color: #48392a;
+  padding: 20px;
 }
 footer {
   background-color: #e5d9b6;
@@ -231,6 +264,7 @@ footer ul {
   font-size: 48px;
   line-height: 71px;
   text-align: center;
+  padding-top: 20px;
 }
 
 #remember-me {

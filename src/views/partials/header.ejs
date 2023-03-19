@@ -1,4 +1,9 @@
 <header>
+  <div class="mensaje">
+    <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-amex"></i> HASTA 3 CUOTAS SIN INTERÉS <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> <i class="fa-brands fa-cc-amex"> + <i class="fa-sharp fa-solid fa-truck-fast"></i></i> ENVÍO GRATIS EN COMPRAS SUPERIOR A $15.000 <i class="fa-sharp fa-solid fa-truck-fast"></i>
+    
+
+  </div>
   <nav>
     <div class="navbar-toggler">
       <a href=""><i class="icon fas fa-bars fa-2xl"></i></a>
@@ -9,7 +14,13 @@
         <span class="fly">FLY</span><span class="feet">FEET</span>
       </a>
     </div>
-    <a href="/list"><div class="products">PRODUCTOS</div></a>
+
+    <div class="search-bar-magnifying-glass">
+      <input type="text" name="search-bar" id="search-bar" placeholder = "Buscar productos" class="search-bar">
+      <div class="div-magnifying-glass">
+      <i class="fa-solid fa-magnifying-glass" id="id-fa-magnifying-glass"></i>
+      </div>
+    
     <div class="user">
       <% if(locals.user){ %>
       <a href="/users/profile" class="login">
@@ -19,7 +30,7 @@
       <% } else { %>
       <a href="/users/login" class="login">
         <img src="/images/user.png" alt="" />
-        <span>Log in</span>
+        <span>MI CUENTA</span>
       </a>
       <% } %>
       <div class="cart">
@@ -29,4 +40,7 @@
       </div>
     </div>
   </nav>
+  <a href="/list" style="text-decoration:none"><div class="barra">
+    <div class="productosheader">PRODUCTOS</div></a>
+  </div>
 </header>
