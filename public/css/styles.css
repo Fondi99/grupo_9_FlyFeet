@@ -325,22 +325,22 @@ form div {
   padding: 15px 12px;
   border: none;
   border-radius: 4px;
-  background: #285430;
+  background: rgb(203, 144, 77);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
   text-align: center;
-  color: #ffffff;
+  color: black;
 }
 .form-fork {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   text-align: center;
-  color: #285430;
-  background: #a4be7b;
+  color: black;
+  background: rgb(223, 204, 116);
   width: 100%;
   padding: 15px 12px;
   border: none;
@@ -352,6 +352,7 @@ form div {
 }
 .loginImg img {
   width: 47vw;
+  padding-top: 12px;
 }
 #register {
   background: none;
@@ -530,6 +531,10 @@ form ul.error {
   font-size: 14px;
   font-weight: 300;
   text-align: left;
+}
+
+.background{
+  background-color: rgb(223, 204, 116);
 }
 /* Start Main */
 
