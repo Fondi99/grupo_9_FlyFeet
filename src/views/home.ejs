@@ -3,7 +3,19 @@
 
     <body id="login">
         <%- include("./partials/header.ejs") %>
-        <main>
+          <div class="container-slider1" id="slider__container1">
+            <div class="slider1" id="slider1">
+               <div class="slider__section1">
+                   <img src="../images/banner1.png" alt="" class="slider__img1"></div>
+               <div class="slider__section1">
+                   <img src="../images/banner3.png" alt="" class="slider__img1"></div>
+               <div class="slider__section1">
+                   <img src="../images/banner2.png" alt="" class="slider__img1"></div>
+            </div>
+                   <div class="slider__btn slider__btn--right1" id="btn-right1">&#62;</div>
+                    <div class="slider__btn slider__btn--left1" id="btn-left1">&#60;</div>
+            </div>
+            <main>
             <div class="atributes">
               <div class="options">
                 <img src="/images/security.png" alt="" />
@@ -40,6 +52,49 @@
 
               <%- include('partials/footer') %>
           </footer>
+          <script>const sliderContainer = document.getElementById('slider-container1')
+            const slider = document.getElementById("slider1");
+            let sliderSection = document.querySelectorAll(".slider__section1");
+            let sliderSectionLast = sliderSection[sliderSection.length -1];
+            
+            const btnLeft = document.getElementById("btn-left1");
+            const btnRight = document.getElementById("btn-right1");
+            
+            slider.insertAdjacentElement('afterbegin', sliderSectionLast); 
+            
+            function Next1() {
+                let sliderSectionFirst = document.querySelectorAll(".slider__section1")[0];
+                slider.style.marginLeft = "-200%";
+                slider.style.transition = "all 0.5s";
+                setTimeout(function(){
+                    slider.style.transition= "none";
+                    slider.insertAdjacentElement("beforeend", sliderSectionFirst);
+                    slider.style.marginLeft = "-100%";
+                }, 500);
+                }
+            
+            function Prev1() {
+                let sliderSectionFirst = document.querySelectorAll(".slider__section1")[0];
+                slider.style.marginLeft = "0%";
+                slider.style.transition = "all 0.5s";
+                setTimeout(function(){
+                    slider.style.transition= "none";
+                    slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+                    slider.style.marginLeft = "-100%";
+                }, 500);
+            }
+            
+            btnRight.addEventListener('click', function(){
+                Next1();
+            });
+            
+            btnLeft.addEventListener('click', function(){
+                Prev1();
+            })
+            
+            setInterval(function(){
+                Next1();
+            }, 5000);</script>
     </body>
 
     </html>
