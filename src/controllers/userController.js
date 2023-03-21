@@ -127,7 +127,10 @@ const controller = {
     } catch (error) {
       console.log(error);
     }
-  }
-};
+  },
+  contacto: (req, res) => {
+    res.render("users/contacto");
+}
+}
 
 export default controller;

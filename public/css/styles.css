@@ -47,7 +47,6 @@ header {
   font-size: 28px;
   line-height: 33px;
   white-space: nowrap;
-  width: 200px;
   text-align: center;
 }
 
@@ -59,6 +58,10 @@ header {
 .id-fa-magnifying-glass{
   height: 50%;
 }
+.div-magnifying-glass{
+  font-size: 200%;
+}
+
 
 .navbar-toggler {
   display: flex;
@@ -120,6 +123,16 @@ nav .products {
   padding: 4px;
   font-size: 26px;
   margin: auto;
+}
+.search-bar{
+  font-family: "Roboto";
+  font-style: normal;
+  border-radius:9px;
+  padding-left:20px;
+  line-height: 33px;
+  font-size: 28px;
+  font-weight: 400;
+
 }
 nav .user {
   display: flex;
@@ -354,6 +367,20 @@ form div {
   width: 47vw;
   padding-top: 12px;
 }
+.flechita{
+  width: 125px;
+  margin-left: 510px
+}
+.you2{
+display: flex;
+}
+
+.you{
+position: absolute;
+font-size: 48px;
+margin-left: 185px;
+}
+
 #register {
   background: none;
 }
@@ -535,7 +562,49 @@ form ul.error {
 
 .background{
   background-color: rgb(223, 204, 116);
+  width: 100%;
+    height: 150px;
+    bottom: 0;
 }
+.background2{
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+.Agregar{
+  color: black;
+  background-color: rgb(223, 204, 116);
+}
+
+.panel{
+  width: 700px;
+  height: 700px;
+}
+
+div .section h4{
+  background-color: rgb(203, 144, 77);
+  text-align: center;
+  padding: 3px;
+  border-radius: 9px;
+  font-size: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+div.section p{
+  font-size: 20px;
+  text-align: center;
+}
+
+.detail{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+}
+
 /* Start Main */
 
 
@@ -590,10 +659,16 @@ article.product .price {
 }
 
 .imgP:hover{
-  -webkit-transform:scale(1.3);
   transition: 0.5s;
   transform:scale(1.5);
-  rotate:360deg
+  rotate: 360deg;
+  }
+
+
+  .revisa{
+    padding: 50px;
+    font-size:xx-large;
+    font-family: "Roboto";
   }
 
 /* End Main */
@@ -697,6 +772,34 @@ left: 10px;
 
 .slider__btn--right{
 right: 10px;
+}
+
+.texto{
+  display: inline-block;
+  font-family: "Roboto";
+  text-align: center;
+  padding: 200px
+}
+
+.maincontacto{
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.conocenos{
+  padding: 50px;
+  font-family: "Roboto";
+  text-align: center;
+  background-color: rgb(195, 233, 145)
+}
+
+.imagen{
+  padding: 20px;
+}
+
+.contenedorcontacto{
+  display: flex;
 }
 
 /*Mobile*/

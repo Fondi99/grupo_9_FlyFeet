@@ -19,4 +19,5 @@ router
     .get("/profileEdit/:id", userController.getProfileEdit)
     .put("/profileEdit/:id", editUserValidation, userController.profileEdit)
     .delete("/profileEdit/:id", userController.deleteAccount)
+    .get("/contacto", userController.contacto)
 export default router;
