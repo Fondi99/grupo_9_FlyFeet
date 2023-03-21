@@ -181,7 +181,7 @@ main .slogan {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-right: 15px;
 }
-main .atributes {
+.atributes {
   background-color: #e5d9b6;
   border-top-left-radius: 75px;
   border-top-right-radius: 75px;
@@ -191,7 +191,7 @@ main .atributes {
   padding-top: 10px;
 }
 
-main .atributes .options {
+.options {
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
